@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace DXApplication2
 {
     /// <summary>
-    /// Interaction logic for SelectionAPersonalDetails.xaml
+    /// Interaction logic for SelectionBFinancialSummary.xaml
     /// </summary>
-    public partial class SelectionAPersonalDetails : UserControl
+    public partial class SelectionBFinancialSummary : UserControl
     {
-        public SelectionAPersonalDetails()
+        public SelectionBFinancialSummary()
         {
             InitializeComponent();
         }

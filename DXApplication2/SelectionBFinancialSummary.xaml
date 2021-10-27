@@ -1,0 +1,1722 @@
+﻿<UserControl x:Class="DXApplication2.SelectionBFinancialSummary"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DXApplication2"
+             xmlns:my="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="20" HorizontalAlignment="Stretch">
+            <ScrollViewer>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <!--start - Employment Details-->
+                    <Grid Grid.Row="0">
+                        <Grid.Resources>
+                            <SolidColorBrush x:Key="brush" Color="Silver"/>
+                        </Grid.Resources>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+
+                        </Grid.RowDefinitions>
+
+                        <!--Grid Title-->
+                        <Border Grid.Column="0" Grid.Row="0" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="Gray" Padding="6" VerticalAlignment="Center">
+                            <TextBlock Padding="3" Foreground="White" FontSize="16">Employment Details</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="0" BorderBrush="{StaticResource brush}" BorderThickness="0 1 0 0" Background="Gray" Padding="6">
+
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="0" BorderBrush="{StaticResource brush}" BorderThickness="0 1 1 0" Background="Gray" Padding="6">
+
+                        </Border>
+
+                        <!--Grid Header-->
+                        <Border Grid.Column="0" Grid.Row="1" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="Silver" Padding="6">
+
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="1" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="Silver" Padding="6" VerticalAlignment="Center">
+                            <TextBlock Padding="3" FontWeight="Bold">Client 1</TextBlock>
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="1" BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0" Background="Silver" Padding="6" VerticalAlignment="Center">
+                            <TextBlock Padding="3" FontWeight="Bold">Client 2</TextBlock>
+                        </Border>
+
+
+                        <!--Work status-->
+                        <Border Grid.Column="0" Grid.Row="2"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3"  TextWrapping="Wrap" VerticalAlignment="Center">Work status</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="2"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <RadioButton x:Name="rbFullyemployed_Client1" Content="Fully employed" GroupName="Workstatus_Client1" Grid.Row="0" Grid.Column="0" />
+                                <RadioButton x:Name="rbParttimeemployed_Client1" Content="Part time employed" GroupName="Workstatus_Client1" Grid.Row="1" Grid.Column="0" />
+                                <RadioButton x:Name="rbHomeduties_Client1" Content="Home duties" GroupName="Workstatus_Client1" Grid.Row="2" Grid.Column="0" />
+                                <RadioButton x:Name="rbSelfemployed_Client1" Content="Self employed" GroupName="Workstatus_Client1" Grid.Row="3" Grid.Column="0" />
+                                <RadioButton x:Name="rbUnemployed_Client1" Content="Unemployed" GroupName="Workstatus_Client1" Grid.Row="4" Grid.Column="0" />
+                                <RadioButton x:Name="rbEarlyRetirement_Client1" Content="Early Retirement" GroupName="Workstatus_Client1" Grid.Row="5" Grid.Column="0" />
+                                <RadioButton x:Name="rbRetired_Client1" Content="Retired" GroupName="Workstatus_Client1" Grid.Row="6" Grid.Column="0" />
+                                <RadioButton x:Name="rbStudent_Client1" Content="Student" GroupName="Workstatus_Client1" Grid.Row="7" Grid.Column="0" />
+                                <RadioButton x:Name="rbUnknown_Client1" Content="Unknown" GroupName="Workstatus_Client1" Grid.Row="8" Grid.Column="0" />
+
+                            </Grid>
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="2"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+
+                                </Grid.ColumnDefinitions>
+                                <RadioButton x:Name="rbFullyemployed_Client2" Content="Fully employed" GroupName="Workstatus_Client2" Grid.Row="0" Grid.Column="0" />
+                                <RadioButton x:Name="rbParttimeemployed_Client2" Content="Part time employed" GroupName="Workstatus_Client2" Grid.Row="1" Grid.Column="0" />
+                                <RadioButton x:Name="rbHomeduties_Client2" Content="Home duties" GroupName="Workstatus_Client2" Grid.Row="2" Grid.Column="0" />
+                                <RadioButton x:Name="rbSelfemployed_Client2" Content="Self employed" GroupName="Workstatus_Client2" Grid.Row="3" Grid.Column="0" />
+                                <RadioButton x:Name="rbUnemployed_Client2" Content="Unemployed" GroupName="Workstatus_Client2" Grid.Row="4" Grid.Column="0" />
+                                <RadioButton x:Name="rbEarlyRetirement_Client2" Content="Early Retirement" GroupName="Workstatus_Client2" Grid.Row="5" Grid.Column="0" />
+                                <RadioButton x:Name="rbRetired_Client2" Content="Retired" GroupName="Workstatus_Client2" Grid.Row="6" Grid.Column="0" />
+                                <RadioButton x:Name="rbStudent_Client2" Content="Student" GroupName="Workstatus_Client2" Grid.Row="7" Grid.Column="0" />
+                                <RadioButton x:Name="rbUnknown_Client2" Content="Unknown" GroupName="Workstatus_Client2" Grid.Row="8" Grid.Column="0" />
+
+                            </Grid>
+                        </Border>
+
+                        <!--Employer-->
+                        <Border Grid.Column="0" Grid.Row="3"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Employer</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="3"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtEmployer_Client1" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="3"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtEmployer_Client2" />
+                        </Border>
+
+                        <!--Employer address-->
+                        <Border Grid.Column="0" Grid.Row="4"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Employer address</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="4"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtEmployeraddress_Client1" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="4"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtEmployeraddress_Client2" />
+                        </Border>
+
+                        <!--Occupation-->
+                        <Border Grid.Column="0" Grid.Row="5"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Occupation</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="5"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtOccupation_Client1" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="5"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtOccupation_Client2" />
+                        </Border>
+
+                        <!--Number of years’ service-->
+                        <Border Grid.Column="0" Grid.Row="6"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Number of years’ service</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="6"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtNumberofyearsservice_Client1" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="6"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtNumberofyearsservice_Client2" />
+                        </Border>
+
+                        <!--(Intended) Retirement date-->
+                        <Border Grid.Column="0" Grid.Row="7"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">(Intended) Retirement date</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="7"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtIntendedRetirementdate_Client1" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="7"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtIntendedRetirementdate_Client2" />
+                        </Border>
+
+                        <!--Do you expect employment income to change within the next 12 months?-->
+                        <Border Grid.Column="0" Grid.Row="8"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 1" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Do you expect employment income to change within the next 12 months?</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="8"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 1">
+                            <my:TextEdit x:Name="txtDoyouexpectemployment_Client1" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="8"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 1">
+                            <my:TextEdit x:Name="txtDoyouexpectemployment_Client2" />
+                        </Border>
+
+                    </Grid>
+                    <!--end - Employment Details-->
+
+                    <!--start - Salary & Other Income-->
+                    <Grid Grid.Row="1" Margin="0 20 0 0">
+                        <Grid.Resources>
+                            <SolidColorBrush x:Key="brush" Color="Silver"/>
+                            <SolidColorBrush x:Key="brushRed" Color="Red"/>
+                        </Grid.Resources>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <!--Grid Title-->
+                        <Border Grid.Column="0" Grid.Row="0" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="Gray" Padding="6" VerticalAlignment="Center">
+                            <TextBlock Padding="3" Foreground="White" FontSize="16">Salary &amp; Other Income</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="0" BorderBrush="{StaticResource brush}" BorderThickness="0 1 0 0" Background="Gray" Padding="6">
+
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="0" BorderBrush="{StaticResource brush}" BorderThickness="0 1 1 0" Background="Gray" Padding="6">
+
+                        </Border>
+
+                        <!--Grid Header-->
+                        <Border Grid.Column="0" Grid.Row="1" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="Silver" Padding="6">
+
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="1" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="Silver" Padding="6" VerticalAlignment="Center">
+                            <TextBlock Padding="3" FontWeight="Bold">Client 1</TextBlock>
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="1" BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0" Background="Silver" Padding="6" VerticalAlignment="Center">
+                            <TextBlock Padding="3" FontWeight="Bold">Client 2</TextBlock>
+                        </Border>
+
+                        <!--Salary income-->
+                        <Border Grid.Column="0" Grid.Row="3"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+
+                                </Grid.RowDefinitions>
+                                <Grid>
+                                    <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Salary income</TextBlock>
+
+                                </Grid>
+                                <Grid Grid.Row="1">
+                                    <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="11" Foreground="Red">(please supply a recent payslip &amp; most current tax return)</TextBlock>
+
+                                </Grid>
+                            </Grid>
+
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="3"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtSalaryincome_Client1" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="3"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtSalaryincome_Client2" />
+                        </Border>
+
+                        <!--Other taxable income-->
+                        <Border Grid.Column="0" Grid.Row="4"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Other taxable income</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="4"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtOthertaxableincome_Client1" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="4"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtOthertaxableincome_Client2" />
+                        </Border>
+
+                        <!--Tax free income-->
+                        <Border Grid.Column="0" Grid.Row="5"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Tax free income</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="5"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtTaxfreeincome_Client1" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="5"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtTaxfreeincome_Client2" />
+                        </Border>
+
+                        <!--Family allowance-->
+                        <Border Grid.Column="0" Grid.Row="6"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Family allowance</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="6"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtFamilyallowance_Client1" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="6"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtFamilyallowance_Client2" />
+                        </Border>
+
+                        <!--Directors fees / gratuities-->
+                        <Border Grid.Column="0" Grid.Row="7"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Directors fees / gratuities</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="7"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtDirectorsfeesgratuities_Client1" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="7"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtDirectorsfeesgratuities_Client2" />
+                        </Border>
+
+                        <!--Are you expecting funds from estate or inheritance in the future?-->
+                        <Border Grid.Column="0" Grid.Row="8"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center"></TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="8"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtAreyouexpectingfunds1_Client1" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="8"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtAreyouexpectingfunds1_Client2" />
+                        </Border>
+
+                        <!--Are you expecting funds from estate or inheritance in the future? 2-->
+                        <Border Grid.Column="0" Grid.Row="9"  BorderBrush="{StaticResource brush}" BorderThickness="1 0 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Are you expecting funds from estate or inheritance in the future?</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="9"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtAreyouexpectingfunds2_Client1" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="9"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtAreyouexpectingfunds2_Client2" />
+                        </Border>
+
+                        <!--Are you expecting funds from estate or inheritance in the future? 3-->
+                        <Border Grid.Column="0" Grid.Row="10"  BorderBrush="{StaticResource brush}" BorderThickness="1 0 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center"></TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="10"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtAreyouexpectingfunds3_Client1" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="10"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtAreyouexpectingfunds3_Client2" />
+                        </Border>
+
+                        <!--Other-->
+                        <Border Grid.Column="0" Grid.Row="11"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center"></TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="11"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtOther1_Client1" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="11"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtOther1_Client2" />
+                        </Border>
+
+                        <!--Other2-->
+                        <Border Grid.Column="0" Grid.Row="12"  BorderBrush="{StaticResource brush}" BorderThickness="1 0 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Other</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="12"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtOther2_Client1" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="12"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtOther2_Client2" />
+                        </Border>
+
+                        <!--Other3-->
+                        <Border Grid.Column="0" Grid.Row="13"  BorderBrush="{StaticResource brush}" BorderThickness="1 0 0 1" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center"></TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="13"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 1">
+                            <my:TextEdit x:Name="txtOther3_Client1" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="13"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 1">
+                            <my:TextEdit x:Name="txtOther3_Client2" />
+                        </Border>
+
+
+                    </Grid>
+                    <!--end - Salary & Other Income-->
+
+                    <!--start - Salary Sacrifice / Package-->
+                    <Grid Grid.Row="2" Margin="0 20 0 0">
+                        <Grid.Resources>
+                            <SolidColorBrush x:Key="brush" Color="Silver"/>
+                            <SolidColorBrush x:Key="brushRed" Color="Red"/>
+                        </Grid.Resources>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <!--Grid Title-->
+                        <Border Grid.Column="0" Grid.Row="0" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="Gray" Padding="6" VerticalAlignment="Center">
+                            <TextBlock Padding="3" Foreground="White" FontSize="16">Salary Sacrifice / Package</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="0" BorderBrush="{StaticResource brush}" BorderThickness="0 1 0 0" Background="Gray" Padding="6">
+
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="0" BorderBrush="{StaticResource brush}" BorderThickness="0 1 1 0" Background="Gray" Padding="6">
+
+                        </Border>
+
+                        <!--Grid Header-->
+                        <Border Grid.Column="0" Grid.Row="1" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="Silver" Padding="6">
+
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="1" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="Silver" Padding="6" VerticalAlignment="Center">
+                            <TextBlock Padding="3" FontWeight="Bold">Client 1</TextBlock>
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="1" BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0" Background="Silver" Padding="6" VerticalAlignment="Center">
+                            <TextBlock Padding="3" FontWeight="Bold">Client 2</TextBlock>
+                        </Border>
+
+                        <!--Salary income-->
+                        <Border Grid.Column="0" Grid.Row="3"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+
+                                </Grid.RowDefinitions>
+                                <Grid>
+                                    <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Employment super contribution rate</TextBlock>
+
+                                </Grid>
+                                <Grid Grid.Row="1">
+                                    <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="11" FontStyle="Italic">(e.g. 9.5%)</TextBlock>
+
+                                </Grid>
+                            </Grid>
+
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="3"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtEmploymentsuper_Client1" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="3"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtEmploymentsuper_Client2" />
+                        </Border>
+
+                        <!--Salary sacrifice to super-->
+                        <Border Grid.Column="0" Grid.Row="4"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Salary sacrifice to super</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="4"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtSalarysacrificetosuper_Client1" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="4"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtSalarysacrificetosuper_Client2" />
+                        </Border>
+
+                        <!--Packaged motor vehicle-->
+                        <Border Grid.Column="0" Grid.Row="5"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+
+                                </Grid.RowDefinitions>
+                                <Grid>
+                                    <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Packaged motor vehicle</TextBlock>
+
+                                </Grid>
+                                <Grid Grid.Row="1">
+                                    <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="11" FontStyle="Italic">(provide paperwork)</TextBlock>
+
+                                </Grid>
+                            </Grid>
+
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="5"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtPackagedmotorvehicle_Client1" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="5"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtPackagedmotorvehicle_Client2" />
+                        </Border>
+
+                        <!--Bonus-->
+                        <Border Grid.Column="0" Grid.Row="6"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Bonus</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="6"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtBonus_Client1" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="6"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtBonus_Client2" />
+                        </Border>
+
+                        <!--Other-->
+                        <Border Grid.Column="0" Grid.Row="7"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 1" Background="WhiteSmoke">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+
+                                </Grid.RowDefinitions>
+                                <Grid>
+                                    <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Other</TextBlock>
+
+                                </Grid>
+                                <Grid Grid.Row="1">
+                                    <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="11" FontStyle="Italic">(eg shares)</TextBlock>
+
+                                </Grid>
+                            </Grid>
+
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="7"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 1">
+                            <my:TextEdit x:Name="txtOther_Client1" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="7"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 1">
+                            <my:TextEdit x:Name="txtOther_Client2" />
+                        </Border>
+
+                    </Grid>
+                    <!--end - Salary Sacrifice / Package-->
+
+                    <!--start - The following section is only relevant if you are currently in receipt of a Centrelink Pension or Benefit.-->
+                    <Grid Grid.Row="3" Margin="0 20 0 0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Border Grid.Row="0" BorderThickness="1 1 0 0">
+                            <TextBlock TextAlignment="Left" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center" Foreground="Red">The following section is only relevant if you are currently in receipt of a Centrelink Pension or Benefit.</TextBlock>
+                        </Border>
+                    </Grid>
+                    <!--end - The following section is only relevant if you are currently in receipt of a Centrelink Pension or Benefit.-->
+
+                    <!--start - Centrelink-->
+                    <Grid Grid.Row="4" Margin="0 20 0 0">
+                        <Grid.Resources>
+                            <SolidColorBrush x:Key="brush" Color="Silver"/>
+                            <SolidColorBrush x:Key="brushRed" Color="Red"/>
+                        </Grid.Resources>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <!--Grid Title-->
+                        <Border Grid.Column="0" Grid.Row="0" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="Gray" Padding="6" VerticalAlignment="Center">
+                            <TextBlock Padding="3" Foreground="White" FontSize="16">Centrelink</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="0" BorderBrush="{StaticResource brush}" BorderThickness="0 1 0 0" Background="Gray" Padding="6">
+
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="0" BorderBrush="{StaticResource brush}" BorderThickness="0 1 1 0" Background="Gray" Padding="6">
+
+                        </Border>
+
+                        <!--Grid Header-->
+                        <Border Grid.Column="0" Grid.Row="1" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="Silver" Padding="6">
+
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="1" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="Silver" Padding="6" VerticalAlignment="Center">
+                            <TextBlock Padding="3" FontWeight="Bold">Client 1</TextBlock>
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="1" BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0" Background="Silver" Padding="6" VerticalAlignment="Center">
+                            <TextBlock Padding="3" FontWeight="Bold">Client 2</TextBlock>
+                        </Border>
+
+
+                        <!--Entitlement amount-->
+                        <Border Grid.Column="0" Grid.Row="2"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Entitlement amount</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="2"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtEntitlementamount_Client1" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="2"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtEntitlementamount_Client2" />
+                        </Border>
+
+                        <!--Entitlement type-->
+                        <Border Grid.Column="0" Grid.Row="3"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Entitlement type</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="3"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtEntitlementtype_Client1" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="3"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtEntitlementtype_Client2" />
+                        </Border>
+
+                        <!--Centrelink reference no. (CRN)-->
+                        <Border Grid.Column="0" Grid.Row="4"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Centrelink reference no. (CRN)</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="4"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtCentrelinkreferencenoCRN_Client1" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="4"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtCentrelinkreferencenoCRN_Client2" />
+                        </Border>
+
+                        <!--Maintenance income-->
+                        <Border Grid.Column="0" Grid.Row="5"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Maintenance income</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="5"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtMaintenanceincome_Client1" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="5"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtMaintenanceincome_Client2" />
+                        </Border>
+
+                        <!--Maintenance payment-->
+                        <Border Grid.Column="0" Grid.Row="6"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Maintenance payment</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="6"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtMaintenancepayment_Client1" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="6"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtMaintenancepayment_Client2" />
+                        </Border>
+
+                        <!--Overseas social security income -->
+                        <Border Grid.Column="0" Grid.Row="7"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 1" Background="WhiteSmoke">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+
+                                </Grid.RowDefinitions>
+                                <Grid>
+                                    <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Overseas social security income</TextBlock>
+
+                                </Grid>
+                                <Grid Grid.Row="1">
+                                    <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="11" FontStyle="Italic">(eg New Zealand pension)</TextBlock>
+
+                                </Grid>
+                            </Grid>
+
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="7"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 1">
+                            <my:TextEdit x:Name="txtOverseassocialsecurityincome_Client1" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="7"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 1">
+                            <my:TextEdit x:Name="txtOverseassocialsecurityincome_Client2" />
+                        </Border>
+
+
+
+                    </Grid>
+                    <!--end - Centrelink-->
+
+                    <!--start - Please provide a recent Centrelink benefit payment letter-->
+                    <Grid Grid.Row="5" Margin="0 20 0 0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Border Grid.Row="0" BorderThickness="1 1 0 0">
+                            <TextBlock TextAlignment="Left" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center" Foreground="Red">Please provide a recent Centrelink benefit payment letter</TextBlock>
+                        </Border>
+                    </Grid>
+                    <!--end - Please provide a recent Centrelink benefit payment letter-->
+
+                    <!--start - Centrelink - File Notes-->
+                    <Grid Grid.Row="6" Margin="0 20 0 0">
+                        <Grid.Resources>
+                            <SolidColorBrush x:Key="brush" Color="Silver"/>
+                        </Grid.Resources>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition Height="100"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <!--Grid Title-->
+                        <Border Grid.Column="0" Grid.Row="0" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="Gray" Padding="6" VerticalAlignment="Center">
+                            <TextBlock Padding="3" Foreground="White" FontSize="16">File Notes</TextBlock>
+                        </Border>
+
+                        <!--File Notes-->
+                        <Border Grid.Column="0" Grid.Row="1"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 1">
+                            <ScrollViewer>
+                                <Grid>
+                                    <InkCanvas x:Name="myInkCanvasFileNotesCentrelink" Height="500">
+
+                                    </InkCanvas>
+                                </Grid>
+                            </ScrollViewer>
+                        </Border>
+
+                    </Grid>
+                    <!--end - Centrelink - File Notes-->
+
+                    <!--start - Cost of living-->
+                    <Grid Grid.Row="7" Margin="0 20 0 0">
+                        <Grid.Resources>
+                            <SolidColorBrush x:Key="brush" Color="Silver"/>
+                            <SolidColorBrush x:Key="brushRed" Color="Red"/>
+                        </Grid.Resources>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <!--Grid Title-->
+                        <Border Grid.Column="0" Grid.ColumnSpan="7" Grid.Row="0" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="Gray" Padding="6" VerticalAlignment="Center">
+                            <TextBlock Padding="3" Foreground="White" FontSize="16">Cost of living</TextBlock>
+                        </Border>
+
+                        <!--Red Desc-->
+                        <Border Grid.Column="0" Grid.ColumnSpan="7" Grid.Row="1" BorderThickness="1 1 0 0">
+                            <TextBlock TextAlignment="Left" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center" Foreground="Red">If you would prefer to provide a summary instead of the Cost of Living and tax deductible items table below, please go to Summary of Expenses on page 9.</TextBlock>
+                        </Border>
+
+                        <!--Row Header-->
+                        <Border Grid.Column="0" Grid.ColumnSpan="7" Grid.Row="2" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="Silver" Padding="6">
+                            <TextBlock TextAlignment="Center" Padding="3" FontSize="16" FontWeight="Bold">Personal</TextBlock>
+                        </Border>
+
+                        <!--Grid Header-->
+                        <Border Grid.Column="0" Grid.Row="3" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="Silver" Padding="6">
+
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="3" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="Silver" Padding="6" VerticalAlignment="Center">
+                            <TextBlock Padding="3" FontWeight="Bold">Fortnight</TextBlock>
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="3" BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0" Background="Silver" Padding="6" VerticalAlignment="Center">
+                            <TextBlock Padding="3" FontWeight="Bold">Month</TextBlock>
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="3" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="Silver" Padding="6" VerticalAlignment="Center">
+                            <TextBlock Padding="3" FontWeight="Bold">Quarter</TextBlock>
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="3" BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0" Background="Silver" Padding="6" VerticalAlignment="Center">
+                            <TextBlock Padding="3" FontWeight="Bold">Half-year</TextBlock>
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="3" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="Silver" Padding="6" VerticalAlignment="Center">
+                            <TextBlock Padding="3" FontWeight="Bold">Annual</TextBlock>
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="3" BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0" Background="Silver" Padding="6" VerticalAlignment="Center">
+                            <TextBlock Padding="3" FontWeight="Bold">Total last year</TextBlock>
+                        </Border>
+
+                        <!--Food/liquids-->
+                        <Border Grid.Column="0" Grid.Row="4"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Food/liquids</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="4"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtFoodliquids_Fortnight" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="4"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtFoodliquids_Month" />
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="4"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtFoodliquids_Quarter" />
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="4"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtFoodliquids_Halfyear" />
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="4"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtFoodliquids_Annual" />
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="4"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtFoodliquids_Totallastyear" />
+                        </Border>
+
+                        <!--Alcohol-->
+                        <Border Grid.Column="0" Grid.Row="5"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Alcohol</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="5"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtAlcohol_Fortnight" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="5"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtAlcohol_Month" />
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="5"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtAlcohol_Quarter" />
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="5"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtAlcohol_Halfyear" />
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="5"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtAlcohol_Annual" />
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="5"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtAlcohol_Totallastyear" />
+                        </Border>
+
+                        <!--Tobacco-->
+                        <Border Grid.Column="0" Grid.Row="6" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Tobacco</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="6"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtTobacco_Fortnight" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="6"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtTobacco_Month" />
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="6"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtTobacco_Quarter" />
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="6"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtTobacco_Halfyear" />
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="6"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtTobacco_Annual" />
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="6"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtTobacco_Totallastyear" />
+                        </Border>
+
+                        <!--Clothing/footwear-->
+                        <Border Grid.Column="0" Grid.Row="7" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Clothing/footwear</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="7"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtClothingfootwear_Fortnight" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="7"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtClothingfootwear_Month" />
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="7"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtClothingfootwear_Quarter" />
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="7"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtClothingfootwear_Halfyear" />
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="7"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtClothingfootwear_Annual" />
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="7"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtClothingfootwear_Totallastyear" />
+                        </Border>
+
+                        <!--Medical/health-->
+                        <Border Grid.Column="0" Grid.Row="8" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Medical/health</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="8"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtMedicalhealth_Fortnight" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="8"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtMedicalhealth_Month" />
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="8"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtMedicalhealth_Quarter" />
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="8"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtMedicalhealth_Halfyear" />
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="8"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtMedicalhealth_Annual" />
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="8"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtMedicalhealth_Totallastyear" />
+                        </Border>
+
+                        <!--Recreation-->
+                        <Border Grid.Column="0" Grid.Row="9" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Recreation</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="9"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtRecreation_Fortnight" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="9"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtRecreation_Month" />
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="9"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtRecreation_Quarter" />
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="9"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtRecreation_Halfyear" />
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="9"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtRecreation_Annual" />
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="9"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtRecreation_Totallastyear" />
+                        </Border>
+
+                        <!--Personal care-->
+                        <Border Grid.Column="0" Grid.Row="10" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Personal care</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="10"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtPersonalcare_Fortnight" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="10"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtPersonalcare_Month" />
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="10"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtPersonalcare_Quarter" />
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="10"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtPersonalcare_Halfyear" />
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="10"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtPersonalcare_Annual" />
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="10"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtPersonalcare_Totallastyear" />
+                        </Border>
+
+                        <!--Phone & post-->
+                        <Border Grid.Column="0" Grid.Row="11" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Phone &amp; post</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="11"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtPhonePost_Fortnight" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="11"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtPhonePost_Month" />
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="11"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtPhonePost_Quarter" />
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="11"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtPhonePost_Halfyear" />
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="11"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtPhonePost_Annual" />
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="11"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtPhonePost_Totallastyear" />
+                        </Border>
+
+                        <!--Travel-->
+                        <Border Grid.Column="0" Grid.Row="12" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Travel</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="12"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtTravel_Fortnight" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="12"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtTravel_Month" />
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="12"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtTravel_Quarter" />
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="12"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtTravel_Halfyear" />
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="12"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtTravel_Annual" />
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="12"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtTravel_Totallastyear" />
+                        </Border>
+
+                        <!--Gifts-->
+                        <Border Grid.Column="0" Grid.Row="13" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Gifts</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="13"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtGifts_Fortnight" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="13"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtGifts_Month" />
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="13"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtGifts_Quarter" />
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="13"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtGifts_Halfyear" />
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="13"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtGifts_Annual" />
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="13"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtGifts_Totallastyear" />
+                        </Border>
+
+                        <!--Other-->
+                        <Border Grid.Column="0" Grid.Row="14" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Other</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="14"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtOther_Fortnight" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="14"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtOther_Month" />
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="14"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtOther_Quarter" />
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="14"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtOther_Halfyear" />
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="14"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtOther_Annual" />
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="14"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtOther_Totallastyear" />
+                        </Border>
+
+                        <!--Row Header-->
+                        <Border Grid.Column="0" Grid.ColumnSpan="7" Grid.Row="15" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="Silver" Padding="6">
+                            <TextBlock TextAlignment="Center" Padding="3" FontSize="16" FontWeight="Bold">Housing</TextBlock>
+                        </Border>
+
+                        <!--Rates & insurance-->
+                        <Border Grid.Column="0" Grid.Row="16" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Rates &amp; insurance</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="16"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtRatesinsurance_Fortnight" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="16"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtRatesinsurance_Month" />
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="16"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtRatesinsurance_Quarter" />
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="16"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtRatesinsurance_Halfyear" />
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="16"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtRatesinsurance_Annual" />
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="16"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtRatesinsurance_Totallastyear" />
+                        </Border>
+
+                        <!--Repairs/maintenance-->
+                        <Border Grid.Column="0" Grid.Row="17" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Repairs/maintenance</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="17"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtRepairsmaintenance_Fortnight" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="17"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtRepairsmaintenance_Month" />
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="17"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtRepairsmaintenance_Quarter" />
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="17"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtRepairsmaintenance_Halfyear" />
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="17"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtRepairsmaintenance_Annual" />
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="17"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtRepairsmaintenance_Totallastyear" />
+                        </Border>
+
+                        <!--Electricity & gas-->
+                        <Border Grid.Column="0" Grid.Row="18" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Electricity &amp; gas</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="18"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtElectricitygas_Fortnight" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="18"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtElectricitygas_Month" />
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="18"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtElectricitygas_Quarter" />
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="18"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtElectricitygas_Halfyear" />
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="18"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtElectricitygas_Annual" />
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="18"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtElectricitygas_Totallastyear" />
+                        </Border>
+
+                        <!--House loan (principal)-->
+                        <Border Grid.Column="0" Grid.Row="19" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">House loan (principal)</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="19"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtHouseloanprincipal_Fortnight" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="19"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtHouseloanprincipal_Month" />
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="19"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtHouseloanprincipal_Quarter" />
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="19"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtHouseloanprincipal_Halfyear" />
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="19"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtHouseloanprincipal_Annual" />
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="19"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtHouseloanprincipal_Totallastyear" />
+                        </Border>
+
+                        <!--Rent/mortgage-->
+                        <Border Grid.Column="0" Grid.Row="20" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Rent/mortgage</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="20"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtRentmortgage_Fortnight" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="20"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtRentmortgage_Month" />
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="20"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtRentmortgage_Quarter" />
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="20"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtRentmortgage_Halfyear" />
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="20"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtRentmortgage_Annual" />
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="20"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtRentmortgage_Totallastyear" />
+                        </Border>
+
+                        <!--Extra mortgage payments-->
+                        <Border Grid.Column="0" Grid.Row="21" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Extra mortgage payments</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="21"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtExtramortgagepayments_Fortnight" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="21"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtExtramortgagepayments_Month" />
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="21"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtExtramortgagepayments_Quarter" />
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="21"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtExtramortgagepayments_Halfyear" />
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="21"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtExtramortgagepayments_Annual" />
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="21"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtExtramortgagepayments_Totallastyear" />
+                        </Border>
+
+                        <!--Furnishing/equipment-->
+                        <Border Grid.Column="0" Grid.Row="22" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Furnishing/equipment</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="22"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtFurnishingequipment_Fortnight" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="22"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtFurnishingequipment_Month" />
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="22"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtFurnishingequipment_Quarter" />
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="22"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtFurnishingequipment_Halfyear" />
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="22"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtFurnishingequipment_Annual" />
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="22"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtFurnishingequipment_Totallastyear" />
+                        </Border>
+
+                        <!--Other-->
+                        <Border Grid.Column="0" Grid.Row="22" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Other</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="22"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtOtherHousing_Fortnight" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="22"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtOtherHousing_Month" />
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="22"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtOtherHousing_Quarter" />
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="22"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtOtherHousing_Halfyear" />
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="22"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtOtherHousing_Annual" />
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="22"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtOtherHousing_Totallastyear" />
+                        </Border>
+
+                        <!--Row Header-->
+                        <Border Grid.Column="0" Grid.ColumnSpan="7" Grid.Row="23" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="Silver" Padding="6">
+                            <TextBlock TextAlignment="Center" Padding="3" FontSize="16" FontWeight="Bold">Transport</TextBlock>
+                        </Border>
+
+                        <!--Registration/insurance-->
+                        <Border Grid.Column="0" Grid.Row="24" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Registration/insurance</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="24"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtRegistrationinsurance_Fortnight" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="24"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtRegistrationinsurance_Month" />
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="24"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtRegistrationinsurance_Quarter" />
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="24"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtRegistrationinsurance_Halfyear" />
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="24"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtRegistrationinsurance_Annual" />
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="24"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtRegistrationinsurance_Totallastyear" />
+                        </Border>
+
+                        <!--Repairs/maintenance-->
+                        <Border Grid.Column="0" Grid.Row="25" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Repairs/maintenance</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="25"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtRepairsmaintenanceTransport_Fortnight" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="25"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtRepairsmaintenanceTransport_Month" />
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="25"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtRepairsmaintenanceTransport_Quarter" />
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="25"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtRepairsmaintenanceTransport_Halfyear" />
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="25"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtRepairsmaintenanceTransport_Annual" />
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="25"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtRepairsmaintenanceTransport_Totallastyear" />
+                        </Border>
+
+                        <!--Fuel & Oil-->
+                        <Border Grid.Column="0" Grid.Row="26" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Fuel &amp; Oil</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="26"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtFuelOil_Fortnight" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="26"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtFuelOil_Month" />
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="26"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtFuelOil_Quarter" />
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="26"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtFuelOil_Halfyear" />
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="26"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtFuelOil_Annual" />
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="26"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtFuelOil_Totallastyear" />
+                        </Border>
+
+                        <!--Replacement vehicle-->
+                        <Border Grid.Column="0" Grid.Row="27" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Replacement vehicle</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="27"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtReplacementvehicle_Fortnight" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="27"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtReplacementvehicle_Month" />
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="27"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtReplacementvehicle_Quarter" />
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="27"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtReplacementvehicle_Halfyear" />
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="27"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtReplacementvehicle_Annual" />
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="27"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtReplacementvehicle_Totallastyear" />
+                        </Border>
+
+                        <!--Fares-->
+                        <Border Grid.Column="0" Grid.Row="28" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Fares</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="28"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtFares_Fortnight" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="28"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtFares_Month" />
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="28"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtFares_Quarter" />
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="28"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtFares_Halfyear" />
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="28"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtFares_Annual" />
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="28"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtFares_Totallastyear" />
+                        </Border>
+
+                        <!--Other-->
+                        <Border Grid.Column="0" Grid.Row="29" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Other</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="29"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtOtherTransport_Fortnight" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="29"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtOtherTransport_Month" />
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="29"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtOtherTransport_Quarter" />
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="29"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtOtherTransport_Halfyear" />
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="29"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtOtherTransport_Annual" />
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="29"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtOtherTransport_Totallastyear" />
+                        </Border>
+
+                        <!--Row Header-->
+                        <Border Grid.Column="0" Grid.ColumnSpan="7" Grid.Row="30" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="Silver" Padding="6">
+                            <TextBlock TextAlignment="Center" Padding="3" FontSize="16" FontWeight="Bold">General</TextBlock>
+                        </Border>
+
+                        <!--Super/life insurance-->
+                        <Border Grid.Column="0" Grid.Row="31" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Super/life insurance</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="31"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtSuperlifeinsurance_Fortnight" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="31"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtSuperlifeinsurance_Month" />
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="31"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtSuperlifeinsurance_Quarter" />
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="31"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtSuperlifeinsurance_Halfyear" />
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="31"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtSuperlifeinsurance_Annual" />
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="31"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtSuperlifeinsurance_Totallastyear" />
+                        </Border>
+
+                        <!--Loan/savings-->
+                        <Border Grid.Column="0" Grid.Row="32" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Loan/savings</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="32"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtLoansavings_Fortnight" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="32"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtLoansavings_Month" />
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="32"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtLoansavings_Quarter" />
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="32"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtLoansavings_Halfyear" />
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="32"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtLoansavings_Annual" />
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="32"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtLoansavings_Totallastyear" />
+                        </Border>
+
+                        <!--Car loan-->
+                        <Border Grid.Column="0" Grid.Row="33" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Car loan</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="33"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtCarloan_Fortnight" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="33"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtCarloan_Month" />
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="33"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtCarloan_Quarter" />
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="33"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtCarloan_Halfyear" />
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="33"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtCarloan_Annual" />
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="33"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtCarloan_Totallastyear" />
+                        </Border>
+
+                        <!--Other-->
+                        <Border Grid.Column="0" Grid.Row="34" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Other</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="34"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtOtherGeneral_Fortnight" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="34"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtOtherGeneral_Month" />
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="34"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtOtherGeneral_Quarter" />
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="34"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtOtherGeneral_Halfyear" />
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="34"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtOtherGeneral_Annual" />
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="34"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtOtherGeneral_Totallastyear" />
+                        </Border>
+
+                        <!--Row Header-->
+                        <Border Grid.Column="0" Grid.ColumnSpan="7" Grid.Row="35" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="Silver" Padding="6">
+                            <TextBlock TextAlignment="Center" Padding="3" FontSize="16" FontWeight="Bold">Children</TextBlock>
+                        </Border>
+
+                        <!--Food/liquid-->
+                        <Border Grid.Column="0" Grid.Row="36" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Food/liquid</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="36"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtFoodliquid_Fortnight" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="36"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtFoodliquid_Month" />
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="36"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtFoodliquid_Quarter" />
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="36"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtFoodliquid_Halfyear" />
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="36"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtFoodliquid_Annual" />
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="36"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtFoodliquid_Totallastyear" />
+                        </Border>
+
+                        <!--Clothing/footwear-->
+                        <Border Grid.Column="0" Grid.Row="37" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Clothing/footwear</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="37"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtClothingfootwearChildren_Fortnight" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="37"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtClothingfootwearChildren_Month" />
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="37"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtClothingfootwearChildren_Quarter" />
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="37"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtClothingfootwearChildren_Halfyear" />
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="37"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtClothingfootwearChildren_Annual" />
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="37"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtClothingfootwearChildren_Totallastyear" />
+                        </Border>
+
+                        <!--Education-->
+                        <Border Grid.Column="0" Grid.Row="38" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Education</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="38"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtEducation_Fortnight" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="38"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtEducation_Month" />
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="38"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtEducation_Quarter" />
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="38"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtEducation_Halfyear" />
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="38"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtEducation_Annual" />
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="38"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtEducation_Totallastyear" />
+                        </Border>
+
+                        <!--Other-->
+                        <Border Grid.Column="0" Grid.Row="39" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="WhiteSmoke">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center">Other</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="39"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtOtherChildren_Fortnight" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="39"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtOtherChildren_Month" />
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="39"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtOtherChildren_Quarter" />
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="39"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtOtherChildren_Halfyear" />
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="39"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0">
+                            <my:TextEdit x:Name="txtOtherChildren_Annual" />
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="39"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0">
+                            <my:TextEdit x:Name="txtOtherChildren_Totallastyear" />
+                        </Border>
+
+                        <!--Total-->
+                        <Border Grid.Column="0" Grid.Row="40" BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="Gray">
+                            <TextBlock TextAlignment="Right" Padding="3" TextWrapping="Wrap" VerticalAlignment="Center" Foreground="White">TOTAL</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="40"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="Gray">
+                            <my:TextEdit x:Name="txtTotal_Fortnight" />
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="40"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="Gray">
+                            <my:TextEdit x:Name="txtTotal_Month" />
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="40"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="Gray">
+                            <my:TextEdit x:Name="txtTotal_Quarter" />
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="40"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="Gray">
+                            <my:TextEdit x:Name="txtTotal_Halfyear" />
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="40"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 0 0" Background="Gray">
+                            <my:TextEdit x:Name="txtTotal_Annual" />
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="40"  BorderBrush="{StaticResource brush}" BorderThickness="1 1 1 0" Background="Gray">
+                            <my:TextEdit x:Name="txtTotal_Totallastyear" />
+                        </Border>
+
+
+
+
+                    </Grid>
+                    <!--end - Cost of living-->
+
+
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+        <!--start - File Notes-->
+        <Grid Grid.Row="1" Margin="20 0 20 20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+
+                <dx:SimpleButton x:Name="btnSave"
+                                                    
+                                                        Glyph="Images\Save_32x32.png" 
+                                                        
+                                                        
+                                                        HorizontalContentAlignment="Left"
+                                                        Content="Accommodation" HorizontalAlignment="Right" Height="40" 
+                                                                     
+                                                                     VerticalAlignment="Center" Width="50" >
+
+
+                </dx:SimpleButton>
+
+                <!--<ProgressRing x:Name="LoadingIndicator" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 50 0" />-->
+
+                <TextBlock HorizontalAlignment="Left" Text="File Notes" TextWrapping="Wrap" VerticalAlignment="Center"/>
+
+            </Grid>
+            <Grid Grid.Row="1">
+                <!--<InkToolbar x:Name="inkToolbar" TargetInkCanvas="{x:Bind myInkCanvas}" VerticalAlignment="Top"/>-->
+            </Grid>
+            <Border Grid.Row="2" BorderThickness="1 1 1 1" BorderBrush="Silver">
+                <ScrollViewer>
+                    <Grid>
+                        <InkCanvas x:Name="myInkCanvas" Height="500">
+
+                        </InkCanvas>
+                    </Grid>
+                </ScrollViewer>
+            </Border>
+
+
+        </Grid>
+        <!--end - File Notes-->
+    </Grid>
+</UserControl>
