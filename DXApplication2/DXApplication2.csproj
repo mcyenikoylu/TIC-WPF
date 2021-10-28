@@ -64,9 +64,6 @@
     <Reference Include="DevExpress.Mvvm.v18.2" />
     <Reference Include="DevExpress.Xpf.Controls.v18.2" />
     <Reference Include="DevExpress.Xpf.Core.v18.2" />
-    <Reference Include="Microsoft.Toolkit.Win32.UI.XamlHost.Managed, Version=6.1.0.0, Culture=neutral, PublicKeyToken=4aff67a105548ee2, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Toolkit.UI.XamlHost.6.1.2\lib\net462\Microsoft.Toolkit.Win32.UI.XamlHost.Managed.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -87,6 +84,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DataAccess.cs" />
     <Compile Include="Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
@@ -179,6 +177,9 @@
     <Resource Include="Images\logo-3.png" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.Data.Sqlite.Core">
+      <Version>5.0.11</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.Toolkit.Wpf.UI.Controls">
       <Version>6.1.2</Version>
     </PackageReference>

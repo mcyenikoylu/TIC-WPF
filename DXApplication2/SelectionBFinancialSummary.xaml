@@ -1692,7 +1692,7 @@
                                                         HorizontalContentAlignment="Left"
                                                         Content="Accommodation" HorizontalAlignment="Right" Height="40" 
                                                                      
-                                                                     VerticalAlignment="Center" Width="50" >
+                                                                     VerticalAlignment="Center" Width="50" Click="BtnSave_Click" >
 
 
                 </dx:SimpleButton>
