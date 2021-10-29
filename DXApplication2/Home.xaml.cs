@@ -54,8 +54,11 @@ namespace DXApplication2
                 encoder.Save(fs);
                 fs.Close();
 
-                var dialog = new MessageDialog("Cover Page data saved successfully.", "Successful");
-                await dialog.ShowAsync();
+                //var dialog = new MessageDialog("Cover Page data saved successfully.", "Successful");
+                //await dialog.ShowAsync();
+
+                MessageBoxResult result = DXMessageBox.Show("Cover Page data saved successfully.", "Successful", MessageBoxButton.OK, MessageBoxImage.Information);
+
             }
             catch (Exception ex)
             {
@@ -1846,7 +1849,6 @@ namespace DXApplication2
 
             }
         }
-
 
     }
 }
