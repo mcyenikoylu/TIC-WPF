@@ -1014,9 +1014,9 @@ namespace DXApplication2
          string FileNotes_FilePath
             )
         {
-            string dbpath = Path.Combine(ApplicationData.Current.LocalFolder.Path, dbname);
+            
             using (SqliteConnection db =
-              new SqliteConnection($"Filename={dbpath}"))
+              new SqliteConnection($"Filename={dbname}"))
             {
                 db.Open();
 
