@@ -1,0 +1,24 @@
+﻿<Window
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui" xmlns:dxpdf="http://schemas.devexpress.com/winfx/2008/xaml/pdf" x:Class="DXApplication2.Views.PageViewer"
+             mc:Ignorable="d"
+             >
+    <Grid>
+
+        <dxpdf:PdfViewerControl x:Name="Viewer" Padding="0" Margin="0" CommandBarStyle="None">
+            <dxpdf:PdfViewerControl.OutlinesViewerSettings>
+                <dxpdf:PdfOutlinesViewerSettings HideOutlinesViewer="True" />
+            </dxpdf:PdfViewerControl.OutlinesViewerSettings>
+            <dxpdf:PdfViewerControl.AttachmentsViewerSettings>
+                <dxpdf:PdfAttachmentsViewerSettings HideAttachmentsViewer="True" />
+            </dxpdf:PdfViewerControl.AttachmentsViewerSettings>
+            <dxpdf:PdfViewerControl.ThumbnailsViewerSettings>
+                <dxpdf:PdfThumbnailsViewerSettings HideThumbnailsViewer="True" />
+            </dxpdf:PdfViewerControl.ThumbnailsViewerSettings>
+        </dxpdf:PdfViewerControl>
+
+    </Grid>
+</Window>

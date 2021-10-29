@@ -65,8 +65,6 @@
 
                     </dx:SimpleButton>
 
-
-
                     <dx:SimpleButton x:Name="btnPDF"
                                                     
                                                         Glyph="Images\ExportToPDF_32x32.png" 

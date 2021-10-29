@@ -1,4 +1,5 @@
 ﻿using DevExpress.Xpf.Core;
+using System.IO;
 
 namespace DXApplication2
 {
@@ -10,6 +11,8 @@ namespace DXApplication2
         public MainWindow()
         {
             InitializeComponent();
+            DataAccess.path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
+            DataAccess.dbpath = DataAccess.path + "\\" + DataAccess.dbname;
         }
     }
 }
