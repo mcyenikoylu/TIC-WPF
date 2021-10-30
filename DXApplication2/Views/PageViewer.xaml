@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui" xmlns:dxpdf="http://schemas.devexpress.com/winfx/2008/xaml/pdf" x:Class="DXApplication2.Views.PageViewer"
              mc:Ignorable="d"
-             >
+             WindowStartupLocation="CenterScreen" 
+    WindowState="Maximized">
     <Grid>
 
         <dxpdf:PdfViewerControl x:Name="Viewer" Padding="0" Margin="0" CommandBarStyle="None">

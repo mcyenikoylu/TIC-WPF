@@ -9,7 +9,8 @@
                  xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
                  xmlns:local="clr-namespace:DXApplication2"
                  mc:Ignorable="d"
-                 Title="The Investment Collective">
+                 Title="The Investment Collective" WindowStartupLocation="CenterScreen" 
+    WindowState="Maximized">
     <dxwui:HamburgerMenu OpenPaneWidth="240"
                          SelectedItem="{Binding HamburgerMenuSelectedItem, Mode=TwoWay}"
                          NavigationTarget="{Binding ElementName=service}">

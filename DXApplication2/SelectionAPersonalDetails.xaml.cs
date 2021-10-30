@@ -1,6 +1,7 @@
 ﻿using DevExpress.Xpf.Core;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -413,6 +414,18 @@ namespace DXApplication2
             finally
             {
                 //LoadingIndicator.IsActive = false;
+            }
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (DataAccess._CoverPageID > 0)
+            {
+                DataTable dt = DataAccess.getSelectionAPersonalDetails(DataAccess._CoverPageID);
+                if (dt.Rows.Count > 0)
+                {
+
+                }
             }
         }
     }

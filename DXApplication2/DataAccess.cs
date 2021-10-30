@@ -1876,7 +1876,7 @@ namespace DXApplication2
 
         public static DataTable getCoverPageData(int coverPageID)
         {
-            SqliteConnection connstr = new SqliteConnection(@"Data Source=ticdb.db;");
+            SqliteConnection connstr = new SqliteConnection($"Filename={dbname}");
             connstr.Open();
             SqliteCommand cmd = new SqliteCommand();
             cmd.Connection = connstr;
@@ -1892,7 +1892,7 @@ namespace DXApplication2
 
         public static DataTable getSelectionAPersonalDetails(int coverPageID)
         {
-            SqliteConnection connstr = new SqliteConnection(@"Data Source=ticdb.db;");
+            SqliteConnection connstr = new SqliteConnection($"Filename={dbname}");
             connstr.Open();
             SqliteCommand cmd = new SqliteCommand();
             cmd.Connection = connstr;
@@ -1908,7 +1908,7 @@ namespace DXApplication2
 
         public static DataTable getSelectionBFinancialSummary(int coverPageID)
         {
-            SqliteConnection connstr = new SqliteConnection(@"Data Source=ticdb.db;");
+            SqliteConnection connstr = new SqliteConnection($"Filename={dbname}");
             connstr.Open();
             SqliteCommand cmd = new SqliteCommand();
             cmd.Connection = connstr;
