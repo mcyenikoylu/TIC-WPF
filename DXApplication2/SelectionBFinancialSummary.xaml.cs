@@ -398,7 +398,379 @@ namespace DXApplication2
                 if (dt.Rows.Count > 0)
                 {
                     //Employment Details
+                    int workstatus_Client1 = Convert.ToInt32(dt.Rows[0].ItemArray[2]);
+                    if (workstatus_Client1 == 1)
+                        rbFullyemployed_Client1.IsChecked = true;
+                    else if (workstatus_Client1 == 2)
+                        rbParttimeemployed_Client1.IsChecked = true;
+                    else if (workstatus_Client1 == 3)
+                        rbHomeduties_Client1.IsChecked = true;
+                    else if (workstatus_Client1 == 4)
+                        rbSelfemployed_Client1.IsChecked = true;
+                    else if (workstatus_Client1 == 5)
+                        rbUnemployed_Client1.IsChecked = true;
+                    else if (workstatus_Client1 == 6)
+                        rbEarlyRetirement_Client1.IsChecked = true;
+                    else if (workstatus_Client1 == 7)
+                        rbRetired_Client1.IsChecked = true;
+                    else if (workstatus_Client1 == 8)
+                        rbStudent_Client1.IsChecked = true;
+                    else if (workstatus_Client1 == 9)
+                        rbUnknown_Client1.IsChecked = true;
 
+                    int workstatus_Client2 = Convert.ToInt32(dt.Rows[0].ItemArray[3]);
+                    if (workstatus_Client2 == 1)
+                        rbFullyemployed_Client2.IsChecked = true;
+                    else if (workstatus_Client2 == 2)
+                        rbParttimeemployed_Client2.IsChecked = true;
+                    else if (workstatus_Client2 == 3)
+                        rbHomeduties_Client2.IsChecked = true;
+                    else if (workstatus_Client2 == 4)
+                        rbSelfemployed_Client2.IsChecked = true;
+                    else if (workstatus_Client2 == 5)
+                        rbUnemployed_Client2.IsChecked = true;
+                    else if (workstatus_Client2 == 6)
+                        rbEarlyRetirement_Client2.IsChecked = true;
+                    else if (workstatus_Client2 == 7)
+                        rbRetired_Client2.IsChecked = true;
+                    else if (workstatus_Client2 == 8)
+                        rbStudent_Client2.IsChecked = true;
+                    else if (workstatus_Client2 == 9)
+                        rbUnknown_Client2.IsChecked = true;
+
+                    txtEmployer_Client1.Text = dt.Rows[0].ItemArray[4].ToString();
+                    txtEmployer_Client2.Text = dt.Rows[0].ItemArray[5].ToString();
+
+                    txtEmployeraddress_Client1.Text = dt.Rows[0].ItemArray[6].ToString();
+                    txtEmployeraddress_Client2.Text = dt.Rows[0].ItemArray[7].ToString();
+
+                    txtOccupation_Client1.Text = dt.Rows[0].ItemArray[8].ToString();
+                    txtOccupation_Client2.Text = dt.Rows[0].ItemArray[9].ToString();
+
+                    txtNumberofyearsservice_Client1.Text = dt.Rows[0].ItemArray[10].ToString();
+                    txtNumberofyearsservice_Client2.Text = dt.Rows[0].ItemArray[11].ToString();
+
+                    txtIntendedRetirementdate_Client1.Text = dt.Rows[0].ItemArray[12].ToString();
+                    txtIntendedRetirementdate_Client2.Text = dt.Rows[0].ItemArray[13].ToString();
+
+                    txtDoyouexpectemployment_Client1.Text = dt.Rows[0].ItemArray[14].ToString();
+                    txtDoyouexpectemployment_Client2.Text = dt.Rows[0].ItemArray[15].ToString();
+
+                    //Salary & Other Income
+                    txtSalaryincome_Client1.Text = dt.Rows[0].ItemArray[16].ToString();
+                    txtSalaryincome_Client2.Text = dt.Rows[0].ItemArray[17].ToString();
+
+                    txtOthertaxableincome_Client1.Text = dt.Rows[0].ItemArray[18].ToString();
+                    txtOthertaxableincome_Client2.Text = dt.Rows[0].ItemArray[19].ToString();
+
+                    txtTaxfreeincome_Client1.Text = dt.Rows[0].ItemArray[20].ToString();
+                    txtTaxfreeincome_Client2.Text = dt.Rows[0].ItemArray[21].ToString();
+
+                    txtFamilyallowance_Client1.Text = dt.Rows[0].ItemArray[22].ToString();
+                    txtFamilyallowance_Client2.Text = dt.Rows[0].ItemArray[23].ToString();
+
+                    txtDirectorsfeesgratuities_Client1.Text = dt.Rows[0].ItemArray[24].ToString();
+                    txtDirectorsfeesgratuities_Client2.Text = dt.Rows[0].ItemArray[25].ToString();
+
+                    txtAreyouexpectingfunds1_Client1.Text = dt.Rows[0].ItemArray[26].ToString();
+                    txtAreyouexpectingfunds1_Client2.Text = dt.Rows[0].ItemArray[27].ToString();
+
+                    txtAreyouexpectingfunds2_Client1.Text = dt.Rows[0].ItemArray[28].ToString();
+                    txtAreyouexpectingfunds2_Client2.Text = dt.Rows[0].ItemArray[29].ToString();
+
+                    txtAreyouexpectingfunds3_Client1.Text = dt.Rows[0].ItemArray[30].ToString();
+                    txtAreyouexpectingfunds3_Client2.Text = dt.Rows[0].ItemArray[31].ToString();
+
+                    txtOther1_Client1.Text = dt.Rows[0].ItemArray[32].ToString();
+                    txtOther1_Client2.Text = dt.Rows[0].ItemArray[33].ToString();
+
+                    txtOther2_Client1.Text = dt.Rows[0].ItemArray[34].ToString();
+                    txtOther2_Client2.Text = dt.Rows[0].ItemArray[35].ToString();
+
+                    txtOther3_Client1.Text = dt.Rows[0].ItemArray[36].ToString();
+                    txtOther3_Client2.Text = dt.Rows[0].ItemArray[37].ToString();
+
+                    //Salary Sacrifice / Package
+                    txtEmploymentsuper_Client1.Text = dt.Rows[0].ItemArray[38].ToString();
+                    txtEmploymentsuper_Client2.Text = dt.Rows[0].ItemArray[39].ToString();
+
+                    txtSalarysacrificetosuper_Client1.Text = dt.Rows[0].ItemArray[40].ToString();
+                    txtSalarysacrificetosuper_Client2.Text = dt.Rows[0].ItemArray[41].ToString();
+
+                    txtPackagedmotorvehicle_Client1.Text = dt.Rows[0].ItemArray[42].ToString();
+                    txtPackagedmotorvehicle_Client2.Text = dt.Rows[0].ItemArray[43].ToString();
+
+                    txtBonus_Client1.Text = dt.Rows[0].ItemArray[44].ToString();
+                    txtBonus_Client2.Text = dt.Rows[0].ItemArray[45].ToString();
+
+                    txtOther_Client1.Text = dt.Rows[0].ItemArray[46].ToString();
+                    txtOther_Client2.Text = dt.Rows[0].ItemArray[47].ToString();
+
+                    //Centrelink
+                    txtEntitlementamount_Client1.Text = dt.Rows[0].ItemArray[48].ToString();
+                    txtEntitlementamount_Client2.Text = dt.Rows[0].ItemArray[49].ToString();
+
+                    txtEntitlementtype_Client1.Text = dt.Rows[0].ItemArray[50].ToString();
+                    txtEntitlementtype_Client2.Text = dt.Rows[0].ItemArray[51].ToString();
+
+                    txtCentrelinkreferencenoCRN_Client1.Text = dt.Rows[0].ItemArray[52].ToString();
+                    txtCentrelinkreferencenoCRN_Client2.Text = dt.Rows[0].ItemArray[53].ToString();
+
+                    txtMaintenanceincome_Client1.Text = dt.Rows[0].ItemArray[54].ToString();
+                    txtMaintenanceincome_Client2.Text = dt.Rows[0].ItemArray[55].ToString();
+
+                    txtMaintenancepayment_Client1.Text = dt.Rows[0].ItemArray[56].ToString();
+                    txtMaintenancepayment_Client2.Text = dt.Rows[0].ItemArray[57].ToString();
+
+                    txtOverseassocialsecurityincome_Client1.Text = dt.Rows[0].ItemArray[58].ToString();
+                    txtOverseassocialsecurityincome_Client2.Text = dt.Rows[0].ItemArray[59].ToString();
+
+                    string FileNotesCentrelink_FileName = dt.Rows[0].ItemArray[60].ToString();
+                    string FileNotesCentrelink_FilePath = dt.Rows[0].ItemArray[61].ToString();
+                    //myInkCanvasFileNotesCentrelink
+
+                    //Cost of living
+                    txtFoodliquids_Fortnight.Text = dt.Rows[0].ItemArray[62].ToString();
+                    txtFoodliquids_Month.Text = dt.Rows[0].ItemArray[63].ToString();
+                    txtFoodliquids_Quarter.Text = dt.Rows[0].ItemArray[64].ToString();
+                    txtFoodliquids_Halfyear.Text = dt.Rows[0].ItemArray[65].ToString();
+                    txtFoodliquids_Annual.Text = dt.Rows[0].ItemArray[66].ToString();
+                    txtFoodliquids_Totallastyear.Text = dt.Rows[0].ItemArray[67].ToString();
+
+                    txtAlcohol_Fortnight.Text = dt.Rows[0].ItemArray[68].ToString();
+                    txtAlcohol_Month.Text = dt.Rows[0].ItemArray[69].ToString();
+                    txtAlcohol_Quarter.Text = dt.Rows[0].ItemArray[70].ToString();
+                    txtAlcohol_Halfyear.Text = dt.Rows[0].ItemArray[71].ToString();
+                    txtAlcohol_Annual.Text = dt.Rows[0].ItemArray[72].ToString();
+                    txtAlcohol_Totallastyear.Text = dt.Rows[0].ItemArray[73].ToString();
+
+                    txtTobacco_Fortnight.Text = dt.Rows[0].ItemArray[74].ToString();
+                    txtTobacco_Month.Text = dt.Rows[0].ItemArray[75].ToString();
+                    txtTobacco_Quarter.Text = dt.Rows[0].ItemArray[76].ToString();
+                    txtTobacco_Halfyear.Text = dt.Rows[0].ItemArray[77].ToString();
+                    txtTobacco_Annual.Text = dt.Rows[0].ItemArray[78].ToString();
+                    txtTobacco_Totallastyear.Text = dt.Rows[0].ItemArray[79].ToString();
+
+                    txtClothingfootwear_Fortnight.Text = dt.Rows[0].ItemArray[80].ToString();
+                    txtClothingfootwear_Month.Text = dt.Rows[0].ItemArray[81].ToString();
+                    txtClothingfootwear_Quarter.Text = dt.Rows[0].ItemArray[82].ToString();
+                    txtClothingfootwear_Halfyear.Text = dt.Rows[0].ItemArray[83].ToString();
+                    txtClothingfootwear_Annual.Text = dt.Rows[0].ItemArray[84].ToString();
+                    txtClothingfootwear_Totallastyear.Text = dt.Rows[0].ItemArray[85].ToString();
+
+                    txtMedicalhealth_Fortnight.Text = dt.Rows[0].ItemArray[86].ToString();
+                    txtMedicalhealth_Month.Text = dt.Rows[0].ItemArray[87].ToString();
+                    txtMedicalhealth_Quarter.Text = dt.Rows[0].ItemArray[88].ToString();
+                    txtMedicalhealth_Halfyear.Text = dt.Rows[0].ItemArray[89].ToString();
+                    txtMedicalhealth_Annual.Text = dt.Rows[0].ItemArray[90].ToString();
+                    txtMedicalhealth_Totallastyear.Text = dt.Rows[0].ItemArray[91].ToString();
+
+                    txtRecreation_Fortnight.Text = dt.Rows[0].ItemArray[92].ToString();
+                    txtRecreation_Month.Text = dt.Rows[0].ItemArray[93].ToString();
+                    txtRecreation_Quarter.Text = dt.Rows[0].ItemArray[94].ToString();
+                    txtRecreation_Halfyear.Text = dt.Rows[0].ItemArray[95].ToString();
+                    txtRecreation_Annual.Text = dt.Rows[0].ItemArray[96].ToString();
+                    txtRecreation_Totallastyear.Text = dt.Rows[0].ItemArray[97].ToString();
+
+                    txtPersonalcare_Fortnight.Text = dt.Rows[0].ItemArray[98].ToString();
+                    txtPersonalcare_Month.Text = dt.Rows[0].ItemArray[99].ToString();
+                    txtPersonalcare_Quarter.Text = dt.Rows[0].ItemArray[100].ToString();
+                    txtPersonalcare_Halfyear.Text = dt.Rows[0].ItemArray[101].ToString();
+                    txtPersonalcare_Annual.Text = dt.Rows[0].ItemArray[102].ToString();
+                    txtPersonalcare_Totallastyear.Text = dt.Rows[0].ItemArray[103].ToString();
+
+                    txtPhonePost_Fortnight.Text = dt.Rows[0].ItemArray[104].ToString();
+                    txtPhonePost_Month.Text = dt.Rows[0].ItemArray[105].ToString();
+                    txtPhonePost_Quarter.Text = dt.Rows[0].ItemArray[106].ToString();
+                    txtPhonePost_Halfyear.Text = dt.Rows[0].ItemArray[107].ToString();
+                    txtPhonePost_Annual.Text = dt.Rows[0].ItemArray[108].ToString();
+                    txtPhonePost_Totallastyear.Text = dt.Rows[0].ItemArray[109].ToString();
+
+                    txtTravel_Fortnight.Text = dt.Rows[0].ItemArray[110].ToString();
+                    txtTravel_Month.Text = dt.Rows[0].ItemArray[111].ToString();
+                    txtTravel_Quarter.Text = dt.Rows[0].ItemArray[112].ToString();
+                    txtTravel_Halfyear.Text = dt.Rows[0].ItemArray[113].ToString();
+                    txtTravel_Annual.Text = dt.Rows[0].ItemArray[114].ToString();
+                    txtTravel_Totallastyear.Text = dt.Rows[0].ItemArray[115].ToString();
+
+                    txtGifts_Fortnight.Text = dt.Rows[0].ItemArray[116].ToString();
+                    txtGifts_Month.Text = dt.Rows[0].ItemArray[117].ToString();
+                    txtGifts_Quarter.Text = dt.Rows[0].ItemArray[118].ToString();
+                    txtGifts_Halfyear.Text = dt.Rows[0].ItemArray[119].ToString();
+                    txtGifts_Annual.Text = dt.Rows[0].ItemArray[120].ToString();
+                    txtGifts_Totallastyear.Text = dt.Rows[0].ItemArray[121].ToString();
+
+                    txtOther_Fortnight.Text = dt.Rows[0].ItemArray[122].ToString();
+                    txtOther_Month.Text = dt.Rows[0].ItemArray[123].ToString();
+                    txtOther_Quarter.Text = dt.Rows[0].ItemArray[124].ToString();
+                    txtOther_Halfyear.Text = dt.Rows[0].ItemArray[125].ToString();
+                    txtOther_Annual.Text = dt.Rows[0].ItemArray[126].ToString();
+                    txtOther_Totallastyear.Text = dt.Rows[0].ItemArray[127].ToString();
+
+                    txtRatesinsurance_Fortnight.Text = dt.Rows[0].ItemArray[128].ToString();
+                    txtRatesinsurance_Month.Text = dt.Rows[0].ItemArray[129].ToString();
+                    txtRatesinsurance_Quarter.Text = dt.Rows[0].ItemArray[130].ToString();
+                    txtRatesinsurance_Halfyear.Text = dt.Rows[0].ItemArray[131].ToString();
+                    txtRatesinsurance_Annual.Text = dt.Rows[0].ItemArray[132].ToString();
+                    txtRatesinsurance_Totallastyear.Text = dt.Rows[0].ItemArray[133].ToString();
+
+                    txtRepairsmaintenance_Fortnight.Text = dt.Rows[0].ItemArray[134].ToString();
+                    txtRepairsmaintenance_Month.Text = dt.Rows[0].ItemArray[135].ToString();
+                    txtRepairsmaintenance_Quarter.Text = dt.Rows[0].ItemArray[136].ToString();
+                    txtRepairsmaintenance_Halfyear.Text = dt.Rows[0].ItemArray[137].ToString();
+                    txtRepairsmaintenance_Annual.Text = dt.Rows[0].ItemArray[138].ToString();
+                    txtRepairsmaintenance_Totallastyear.Text = dt.Rows[0].ItemArray[139].ToString();
+
+                    txtElectricitygas_Fortnight.Text = dt.Rows[0].ItemArray[140].ToString();
+                    txtElectricitygas_Month.Text = dt.Rows[0].ItemArray[141].ToString();
+                    txtElectricitygas_Quarter.Text = dt.Rows[0].ItemArray[142].ToString();
+                    txtElectricitygas_Halfyear.Text = dt.Rows[0].ItemArray[143].ToString();
+                    txtElectricitygas_Annual.Text = dt.Rows[0].ItemArray[144].ToString();
+                    txtElectricitygas_Totallastyear.Text = dt.Rows[0].ItemArray[145].ToString();
+
+                    txtHouseloanprincipal_Fortnight.Text = dt.Rows[0].ItemArray[146].ToString();
+                    txtHouseloanprincipal_Month.Text = dt.Rows[0].ItemArray[147].ToString();
+                    txtHouseloanprincipal_Quarter.Text = dt.Rows[0].ItemArray[148].ToString();
+                    txtHouseloanprincipal_Halfyear.Text = dt.Rows[0].ItemArray[149].ToString();
+                    txtHouseloanprincipal_Annual.Text = dt.Rows[0].ItemArray[150].ToString();
+                    txtHouseloanprincipal_Totallastyear.Text = dt.Rows[0].ItemArray[151].ToString();
+
+                    txtRentmortgage_Fortnight.Text = dt.Rows[0].ItemArray[152].ToString();
+                    txtRentmortgage_Month.Text = dt.Rows[0].ItemArray[153].ToString();
+                    txtRentmortgage_Quarter.Text = dt.Rows[0].ItemArray[154].ToString();
+                    txtRentmortgage_Halfyear.Text = dt.Rows[0].ItemArray[155].ToString();
+                    txtRentmortgage_Annual.Text = dt.Rows[0].ItemArray[156].ToString();
+                    txtRentmortgage_Totallastyear.Text = dt.Rows[0].ItemArray[157].ToString();
+
+                    txtExtramortgagepayments_Fortnight.Text = dt.Rows[0].ItemArray[158].ToString();
+                    txtExtramortgagepayments_Month.Text = dt.Rows[0].ItemArray[159].ToString();
+                    txtExtramortgagepayments_Quarter.Text = dt.Rows[0].ItemArray[160].ToString();
+                    txtExtramortgagepayments_Halfyear.Text = dt.Rows[0].ItemArray[161].ToString();
+                    txtExtramortgagepayments_Annual.Text = dt.Rows[0].ItemArray[162].ToString();
+                    txtExtramortgagepayments_Totallastyear.Text = dt.Rows[0].ItemArray[163].ToString();
+
+                    txtFurnishingequipment_Fortnight.Text = dt.Rows[0].ItemArray[164].ToString();
+                    txtFurnishingequipment_Month.Text = dt.Rows[0].ItemArray[165].ToString();
+                    txtFurnishingequipment_Quarter.Text = dt.Rows[0].ItemArray[166].ToString();
+                    txtFurnishingequipment_Halfyear.Text = dt.Rows[0].ItemArray[167].ToString();
+                    txtFurnishingequipment_Annual.Text = dt.Rows[0].ItemArray[168].ToString();
+                    txtFurnishingequipment_Totallastyear.Text = dt.Rows[0].ItemArray[169].ToString();
+
+                    txtOtherHousing_Fortnight.Text = dt.Rows[0].ItemArray[170].ToString();
+                    txtOtherHousing_Month.Text = dt.Rows[0].ItemArray[171].ToString();
+                    txtOtherHousing_Quarter.Text = dt.Rows[0].ItemArray[172].ToString();
+                    txtOtherHousing_Halfyear.Text = dt.Rows[0].ItemArray[173].ToString();
+                    txtOtherHousing_Annual.Text = dt.Rows[0].ItemArray[174].ToString();
+                    txtOtherHousing_Totallastyear.Text = dt.Rows[0].ItemArray[175].ToString();
+
+                    txtRegistrationinsurance_Fortnight.Text = dt.Rows[0].ItemArray[176].ToString();
+                    txtRegistrationinsurance_Month.Text = dt.Rows[0].ItemArray[177].ToString();
+                    txtRegistrationinsurance_Quarter.Text = dt.Rows[0].ItemArray[178].ToString();
+                    txtRegistrationinsurance_Halfyear.Text = dt.Rows[0].ItemArray[179].ToString();
+                    txtRegistrationinsurance_Annual.Text = dt.Rows[0].ItemArray[180].ToString();
+                    txtRegistrationinsurance_Totallastyear.Text = dt.Rows[0].ItemArray[181].ToString();
+
+                    txtRepairsmaintenanceTransport_Fortnight.Text = dt.Rows[0].ItemArray[182].ToString();
+                    txtRepairsmaintenanceTransport_Month.Text = dt.Rows[0].ItemArray[183].ToString();
+                    txtRepairsmaintenanceTransport_Quarter.Text = dt.Rows[0].ItemArray[184].ToString();
+                    txtRepairsmaintenanceTransport_Halfyear.Text = dt.Rows[0].ItemArray[185].ToString();
+                    txtRepairsmaintenanceTransport_Annual.Text = dt.Rows[0].ItemArray[186].ToString();
+                    txtRepairsmaintenanceTransport_Totallastyear.Text = dt.Rows[0].ItemArray[187].ToString();
+
+                    txtFuelOil_Fortnight.Text = dt.Rows[0].ItemArray[188].ToString();
+                    txtFuelOil_Month.Text = dt.Rows[0].ItemArray[189].ToString();
+                    txtFuelOil_Quarter.Text = dt.Rows[0].ItemArray[190].ToString();
+                    txtFuelOil_Halfyear.Text = dt.Rows[0].ItemArray[191].ToString();
+                    txtFuelOil_Annual.Text = dt.Rows[0].ItemArray[192].ToString();
+                    txtFuelOil_Totallastyear.Text = dt.Rows[0].ItemArray[193].ToString();
+
+                    txtReplacementvehicle_Fortnight.Text = dt.Rows[0].ItemArray[194].ToString();
+                    txtReplacementvehicle_Month.Text = dt.Rows[0].ItemArray[195].ToString();
+                    txtReplacementvehicle_Quarter.Text = dt.Rows[0].ItemArray[196].ToString();
+                    txtReplacementvehicle_Halfyear.Text = dt.Rows[0].ItemArray[197].ToString();
+                    txtReplacementvehicle_Annual.Text = dt.Rows[0].ItemArray[198].ToString();
+                    txtReplacementvehicle_Totallastyear.Text = dt.Rows[0].ItemArray[199].ToString();
+
+                    txtFares_Fortnight.Text = dt.Rows[0].ItemArray[200].ToString();
+                    txtFares_Month.Text = dt.Rows[0].ItemArray[201].ToString();
+                    txtFares_Quarter.Text = dt.Rows[0].ItemArray[202].ToString();
+                    txtFares_Halfyear.Text = dt.Rows[0].ItemArray[203].ToString();
+                    txtFares_Annual.Text = dt.Rows[0].ItemArray[204].ToString();
+                    txtFares_Totallastyear.Text = dt.Rows[0].ItemArray[205].ToString();
+
+                    txtOtherTransport_Fortnight.Text = dt.Rows[0].ItemArray[206].ToString();
+                    txtOtherTransport_Month.Text = dt.Rows[0].ItemArray[207].ToString();
+                    txtOtherTransport_Quarter.Text = dt.Rows[0].ItemArray[208].ToString();
+                    txtOtherTransport_Halfyear.Text = dt.Rows[0].ItemArray[209].ToString();
+                    txtOtherTransport_Annual.Text = dt.Rows[0].ItemArray[210].ToString();
+                    txtOtherTransport_Totallastyear.Text = dt.Rows[0].ItemArray[211].ToString();
+
+                    txtSuperlifeinsurance_Fortnight.Text = dt.Rows[0].ItemArray[212].ToString();
+                    txtSuperlifeinsurance_Month.Text = dt.Rows[0].ItemArray[213].ToString();
+                    txtSuperlifeinsurance_Quarter.Text = dt.Rows[0].ItemArray[214].ToString();
+                    txtSuperlifeinsurance_Halfyear.Text = dt.Rows[0].ItemArray[215].ToString();
+                    txtSuperlifeinsurance_Annual.Text = dt.Rows[0].ItemArray[216].ToString();
+                    txtSuperlifeinsurance_Totallastyear.Text = dt.Rows[0].ItemArray[217].ToString();
+
+                    txtLoansavings_Fortnight.Text = dt.Rows[0].ItemArray[218].ToString();
+                    txtLoansavings_Month.Text = dt.Rows[0].ItemArray[219].ToString();
+                    txtLoansavings_Quarter.Text = dt.Rows[0].ItemArray[220].ToString();
+                    txtLoansavings_Halfyear.Text = dt.Rows[0].ItemArray[221].ToString();
+                    txtLoansavings_Annual.Text = dt.Rows[0].ItemArray[222].ToString();
+                    txtLoansavings_Totallastyear.Text = dt.Rows[0].ItemArray[223].ToString();
+
+                    txtCarloan_Fortnight.Text = dt.Rows[0].ItemArray[224].ToString();
+                    txtCarloan_Month.Text = dt.Rows[0].ItemArray[225].ToString();
+                    txtCarloan_Quarter.Text = dt.Rows[0].ItemArray[226].ToString();
+                    txtCarloan_Halfyear.Text = dt.Rows[0].ItemArray[227].ToString();
+                    txtCarloan_Annual.Text = dt.Rows[0].ItemArray[228].ToString();
+                    txtCarloan_Totallastyear.Text = dt.Rows[0].ItemArray[229].ToString();
+
+                    txtOtherGeneral_Fortnight.Text = dt.Rows[0].ItemArray[230].ToString();
+                    txtOtherGeneral_Month.Text = dt.Rows[0].ItemArray[231].ToString();
+                    txtOtherGeneral_Quarter.Text = dt.Rows[0].ItemArray[232].ToString();
+                    txtOtherGeneral_Halfyear.Text = dt.Rows[0].ItemArray[233].ToString();
+                    txtOtherGeneral_Annual.Text = dt.Rows[0].ItemArray[234].ToString();
+                    txtOtherGeneral_Totallastyear.Text = dt.Rows[0].ItemArray[235].ToString();
+
+                    txtFoodliquid_Fortnight.Text = dt.Rows[0].ItemArray[236].ToString();
+                    txtFoodliquid_Month.Text = dt.Rows[0].ItemArray[237].ToString();
+                    txtFoodliquid_Quarter.Text = dt.Rows[0].ItemArray[238].ToString();
+                    txtFoodliquid_Halfyear.Text = dt.Rows[0].ItemArray[239].ToString();
+                    txtFoodliquid_Annual.Text = dt.Rows[0].ItemArray[240].ToString();
+                    txtFoodliquid_Totallastyear.Text = dt.Rows[0].ItemArray[241].ToString();
+
+                    txtClothingfootwearChildren_Fortnight.Text = dt.Rows[0].ItemArray[242].ToString();
+                    txtClothingfootwearChildren_Month.Text = dt.Rows[0].ItemArray[243].ToString();
+                    txtClothingfootwearChildren_Quarter.Text = dt.Rows[0].ItemArray[244].ToString();
+                    txtClothingfootwearChildren_Halfyear.Text = dt.Rows[0].ItemArray[245].ToString();
+                    txtClothingfootwearChildren_Annual.Text = dt.Rows[0].ItemArray[246].ToString();
+                    txtClothingfootwearChildren_Totallastyear.Text = dt.Rows[0].ItemArray[247].ToString();
+
+                    txtEducation_Fortnight.Text = dt.Rows[0].ItemArray[248].ToString();
+                    txtEducation_Month.Text = dt.Rows[0].ItemArray[249].ToString();
+                    txtEducation_Quarter.Text = dt.Rows[0].ItemArray[250].ToString();
+                    txtEducation_Halfyear.Text = dt.Rows[0].ItemArray[251].ToString();
+                    txtEducation_Annual.Text = dt.Rows[0].ItemArray[252].ToString();
+                    txtEducation_Totallastyear.Text = dt.Rows[0].ItemArray[253].ToString();
+
+                    txtOtherChildren_Fortnight.Text = dt.Rows[0].ItemArray[254].ToString();
+                    txtOtherChildren_Month.Text = dt.Rows[0].ItemArray[255].ToString();
+                    txtOtherChildren_Quarter.Text = dt.Rows[0].ItemArray[256].ToString();
+                    txtOtherChildren_Halfyear.Text = dt.Rows[0].ItemArray[257].ToString();
+                    txtOtherChildren_Annual.Text = dt.Rows[0].ItemArray[258].ToString();
+                    txtOtherChildren_Totallastyear.Text = dt.Rows[0].ItemArray[259].ToString();
+
+                    txtTotal_Fortnight.Text = dt.Rows[0].ItemArray[260].ToString();
+                    txtTotal_Month.Text = dt.Rows[0].ItemArray[261].ToString();
+                    txtTotal_Quarter.Text = dt.Rows[0].ItemArray[262].ToString();
+                    txtTotal_Halfyear.Text = dt.Rows[0].ItemArray[263].ToString();
+                    txtTotal_Annual.Text = dt.Rows[0].ItemArray[264].ToString();
+                    txtTotal_Totallastyear.Text = dt.Rows[0].ItemArray[265].ToString();
+
+                    string FileNotes_FileName = dt.Rows[0].ItemArray[266].ToString();
+                    string FileNotes_FilePath = dt.Rows[0].ItemArray[267].ToString();
+                    //myInkCanvas
                 }
             }
         }
