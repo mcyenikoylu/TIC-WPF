@@ -6,7 +6,7 @@
              xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui" xmlns:dxpdf="http://schemas.devexpress.com/winfx/2008/xaml/pdf" x:Class="DXApplication2.Views.PageViewer"
              mc:Ignorable="d"
              WindowStartupLocation="CenterScreen" 
-    WindowState="Maximized">
+    WindowState="Maximized" Icon="/HamburgerMenu;component/Images/TIC24x24Logo.png">
     <Grid>
 
         <dxpdf:PdfViewerControl x:Name="Viewer" Padding="0" Margin="0" CommandBarStyle="None">

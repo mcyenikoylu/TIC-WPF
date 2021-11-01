@@ -10,7 +10,7 @@
                  xmlns:local="clr-namespace:DXApplication2"
                  mc:Ignorable="d"
                  Title="The Investment Collective" WindowStartupLocation="CenterScreen" 
-    WindowState="Maximized">
+    WindowState="Maximized" Icon="Images/TIC24x24Logo.png">
     <dxwui:HamburgerMenu OpenPaneWidth="240"
                          SelectedItem="{Binding HamburgerMenuSelectedItem, Mode=TwoWay}"
                          NavigationTarget="{Binding ElementName=service}">
