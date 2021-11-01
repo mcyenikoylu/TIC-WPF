@@ -15,19 +15,16 @@
             
                
                     <Grid Grid.Column="0">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition MinHeight="20" Height="Auto"></RowDefinition>
-                                <RowDefinition MinHeight="20" Height="Auto"></RowDefinition>
-                            </Grid.RowDefinitions>
-                            <TextBlock x:Name="databasetype" Grid.Row="0" Text="Database Type: SQLite3" Margin="10" TextWrapping="Wrap" />
-                            <TextBlock x:Name="databasepath" Grid.Row="1" Text="Database Path:" Margin="10" TextWrapping="Wrap" />
-                        </Grid>
-                        <Grid>
-                            <Button HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="0 0 0 30" Visibility="Collapsed" Background="Blue" Foreground="White" Content="Load Data"  />
-                        </Grid>
-                        <Grid>
-                            <Button HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Background="Blue" Foreground="White" Content="Open Folder"  />
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition MinHeight="20" Height="Auto"></RowDefinition>
+                        <RowDefinition MinHeight="20" Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Name="databasetype" Grid.Row="0" Text="Database Type: SQLite3" Margin="10" TextWrapping="Wrap" />
+                    <TextBlock x:Name="databasepath" Grid.Row="1" Text="Database Path:" Margin="10" TextWrapping="Wrap" />
+                </Grid>
+                <Grid>
+                            <Button x:Name="btnOpen" Click="BtnOpen_Click" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Background="Blue" Foreground="White" Content="Open Folder"  />
                         </Grid>
                     </Grid>
                 

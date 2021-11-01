@@ -24,6 +24,9 @@ namespace DXApplication2.Views
         public PageViewer()
         {
             InitializeComponent();
+
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NDk5ODE1QDMxMzkyZTMyMmUzMEJGcU80NFlWUTBpWlJXRjhSTGxxWU9sVjYvWCtvUjRBbGlhRHJBM1VmLzg9");
+
             Viewer.OpenDocument(DataAccess._PageViewerFilePath);
             //Stream stream = GetResourceStream(DataAccess._PageViewerFilePath);
             //Viewer.DocumentSource = stream;

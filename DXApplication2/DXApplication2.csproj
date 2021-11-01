@@ -68,6 +68,7 @@
     <Reference Include="DevExpress.Mvvm.v18.2" />
     <Reference Include="DevExpress.Pdf.v18.2.Core, Version=18.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Pdf.v18.2.Drawing, Version=18.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v18.2.Core, Version=18.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Xpf.Controls.v18.2" />
     <Reference Include="DevExpress.Xpf.Core.v18.2" />
     <Reference Include="DevExpress.Xpf.Docking.v18.2, Version=18.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -100,6 +101,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DataAccess.cs" />
+    <Compile Include="DXSplashScreen\SplashScreenLoading.xaml.cs">
+      <DependentUpon>SplashScreenLoading.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
@@ -118,6 +122,10 @@
     <Compile Include="Views\PageViewer.xaml.cs">
       <DependentUpon>PageViewer.xaml</DependentUpon>
     </Compile>
+    <Page Include="DXSplashScreen\SplashScreenLoading.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Home.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -170,6 +178,8 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Resource Include="Images\TIC24x24Logo.png" />
+    <Resource Include="DXSplashScreen\Image.png" />
+    <Resource Include="DXSplashScreen\Logo.png" />
     <Content Include="tic24x24logo_a0a_icon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -179,10 +189,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Content Include="Documents\temp.docx">
+    <Content Include="temp.docx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Documents\ticdb.db">
+    <Content Include="ticdb.db">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="packages.config" />
@@ -234,7 +244,7 @@
     <Resource Include="Images\ExportToPDF_32x32.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Documents\logo-1.png">
+    <Content Include="logo-1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

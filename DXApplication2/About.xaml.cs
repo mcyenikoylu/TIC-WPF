@@ -1,8 +1,10 @@
-﻿using Microsoft.Data.Sqlite;
+﻿using DevExpress.Xpf.Core;
+using Microsoft.Data.Sqlite;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.IO;
 using System.Windows.Controls;
 using Windows.Storage;
@@ -21,40 +23,13 @@ namespace DXApplication2
         public About()
         {
             InitializeComponent();
-            //DataContext = grid_data;
-            //databasepath.Text = "Database Path: " + Path.Combine(ApplicationData.Current.LocalFolder.Path, "ticdb.db");
-        }
-
-        public class DataModel
-        {
-            public ICollectionView Data { get; set; }
-            public ICollectionView Data2 { get; set; }
-            public ICollectionView Data3 { get; set; }
-
-            public DataModel()
-            {
-                Data = new CollectionViewSource
-                {
-                    Source = CreateList()
-                }.View;
-
-                Data2 = new CollectionViewSource
-                {
-                    Source = CreateList_SelectionAPersonalDetails()
-                }.View;
-
-                Data3 = new CollectionViewSource
-                {
-                    Source = CreateList_SelectionBFinancialSummary()
-                }.View;
-            }
         }
 
         public static IList CreateList()
         {
             List<TestData> list = new List<TestData>();
 
-            SqliteConnection connstr = new SqliteConnection(@"Data Source=ticdb.db;");
+            SqliteConnection connstr = new SqliteConnection($"Filename={DataAccess.dbname}");
             connstr.Open();
             SqliteCommand cmd = new SqliteCommand();
             cmd.Connection = connstr;
@@ -109,16 +84,16 @@ namespace DXApplication2
             public string FileNotes_FilePath { get; set; }
         }
 
-        private async void Button_Click(object sender, RoutedEventArgs e)
-        {
-            await Windows.System.Launcher.LaunchFolderAsync(ApplicationData.Current.LocalFolder);
-        }
+        //private async void Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    await Windows.System.Launcher.LaunchFolderAsync(ApplicationData.Current.LocalFolder);
+        //}
 
         public static IList CreateList_SelectionAPersonalDetails()
         {
             List<SelectionAPersonalDetails> list = new List<SelectionAPersonalDetails>();
 
-            SqliteConnection connstr = new SqliteConnection(@"Data Source=ticdb.db;");
+            SqliteConnection connstr = new SqliteConnection($"Filename={DataAccess.dbname}");
             connstr.Open();
             SqliteCommand cmd = new SqliteCommand();
             cmd.Connection = connstr;
@@ -948,7 +923,7 @@ namespace DXApplication2
         {
             List<SelectionBFinancialSummary> list = new List<SelectionBFinancialSummary>();
 
-            SqliteConnection connstr = new SqliteConnection(@"Data Source=ticdb.db;");
+            SqliteConnection connstr = new SqliteConnection($"Filename={DataAccess.dbname}");
             connstr.Open();
             SqliteCommand cmd = new SqliteCommand();
             cmd.Connection = connstr;
@@ -1589,17 +1564,41 @@ namespace DXApplication2
             return list;
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
+        //private void Button_Click_1(object sender, RoutedEventArgs e)
+        //{
 
-        }
+        //}
 
         private void UserControl_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
-            grdDatabase.ItemsSource = CreateList();
-            grdDatabase2.ItemsSource = CreateList_SelectionAPersonalDetails();
-            grdDatabase3.ItemsSource = CreateList_SelectionBFinancialSummary();
-            databasepath.Text = "Database Path: " + Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase).Replace("file:\\", "").ToString() + "\\ticdb.db";
+            try
+            {
+                DXSplashScreen.Show<SplashScreenLoading>();
+
+                grdDatabase.ItemsSource = CreateList();
+                grdDatabase2.ItemsSource = CreateList_SelectionAPersonalDetails();
+                grdDatabase3.ItemsSource = CreateList_SelectionBFinancialSummary();
+                databasepath.Text = "Database Path: " + Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase).Replace("file:\\", "").ToString() + "\\ticdb.db";
+
+            }
+            catch (Exception ex)
+            {
+                if (DXSplashScreen.IsActive)
+                    DXSplashScreen.Close();
+            }
+            finally
+            {
+                if (DXSplashScreen.IsActive)
+                    DXSplashScreen.Close();
+            }
+            
+            
+        }
+
+        private void BtnOpen_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            string path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase).Replace("file:\\", "").ToString();
+            Process.Start(path);
         }
     }
 }

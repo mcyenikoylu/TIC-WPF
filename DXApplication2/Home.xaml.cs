@@ -24,7 +24,6 @@ namespace DXApplication2
         public Home()
         {
             InitializeComponent();
-            
         }
 
         private async void BtnSave_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -32,6 +31,7 @@ namespace DXApplication2
             try
             {
                 //LoadingIndicator.IsActive = true;
+                DXSplashScreen.Show<SplashScreenLoading>();
 
                 DateTime dt = Convert.ToDateTime(dataPicket1.EditValue);
 
@@ -44,7 +44,7 @@ namespace DXApplication2
                 var file = await storageFolder.CreateFileAsync(fileName + ".jpg", CreationCollisionOption.ReplaceExisting);
 
                 MemoryStream ms = new MemoryStream();
-                FileStream fs = new FileStream(fileNotesFolderPath +"//"+ fileName + ".jpg", FileMode.Create);
+                FileStream fs = new FileStream(fileNotesFolderPath + "//" + fileName + ".jpg", FileMode.Create);
 
                 RenderTargetBitmap rtb = new RenderTargetBitmap((int)myInkCanvas.ActualWidth, (int)myInkCanvas.ActualHeight, 96d, 96d, PixelFormats.Default);
                 rtb.Render(myInkCanvas);
@@ -56,6 +56,9 @@ namespace DXApplication2
 
                 //var dialog = new MessageDialog("Cover Page data saved successfully.", "Successful");
                 //await dialog.ShowAsync();
+
+                if (DXSplashScreen.IsActive)
+                    DXSplashScreen.Close();
 
                 MessageBoxResult result = DXMessageBox.Show("Cover Page data saved successfully.", "Successful", MessageBoxButton.OK, MessageBoxImage.Information);
 
@@ -77,14 +80,14 @@ namespace DXApplication2
                 MessageBoxResult result = DXMessageBox.Show("All fields will be cleared. Do you confirm?", "Question", MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (result == MessageBoxResult.Yes)
 
-                    //var dialog = new MessageDialog("All fields will be cleared. Do you confirm?", "Question");
-                    //dialog.Commands.Add(new UICommand("Yes", null));
-                    //dialog.Commands.Add(new UICommand("No", null));
-                    //dialog.DefaultCommandIndex = 0;
-                    //dialog.CancelCommandIndex = 1;
-                    //var result = await dialog.ShowAsync();
+                //var dialog = new MessageDialog("All fields will be cleared. Do you confirm?", "Question");
+                //dialog.Commands.Add(new UICommand("Yes", null));
+                //dialog.Commands.Add(new UICommand("No", null));
+                //dialog.DefaultCommandIndex = 0;
+                //dialog.CancelCommandIndex = 1;
+                //var result = await dialog.ShowAsync();
 
-                    //if (result.Label == "Yes")
+                //if (result.Label == "Yes")
                 {
                     //LoadingIndicator.IsActive = true;
                     // do something
@@ -112,38 +115,25 @@ namespace DXApplication2
         {
             try
             {
-                //LoadingIndicator.IsActive = true;
-                //await Task.Run(() => LongOperationAsync());
+                DXSplashScreen.Show<SplashScreenLoading>();
                 LongOperationAsync();
             }
             catch (Exception ex)
             {
-
+                if (DXSplashScreen.IsActive)
+                    DXSplashScreen.Close();
             }
             finally
             {
-                //LoadingIndicator.IsActive = false;
-
-                //var dialog = new MessageDialog("The document has been created. Do you want to view the document?", "Successful");
-                //dialog.Commands.Add(new UICommand("Yes", null));
-                //dialog.Commands.Add(new UICommand("No", null));
-                //dialog.DefaultCommandIndex = 0;
-                //dialog.CancelCommandIndex = 1;
-                //var result = await dialog.ShowAsync();
-                //if (result.Label == "Yes")
-                //{
-                //    Frame.Navigate(typeof(PageViewer));
-                //}
+                if (DXSplashScreen.IsActive)
+                    DXSplashScreen.Close();
 
                 MessageBoxResult result = DXMessageBox.Show("The document has been created. Do you want to view the document?", "Question", MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (result == MessageBoxResult.Yes)
                 {
-                    //NavigationService.Navigate("PageViewer", null, this);
                     Views.PageViewer win = new Views.PageViewer();
                     win.ShowDialog();
-                    
                 }
-
             }
         }
 
@@ -154,12 +144,17 @@ namespace DXApplication2
                 DataTable dt = DataAccess.getCoverPageData(DataAccess._CoverPageID);
                 if (dt.Rows.Count > 0)
                 {
+                    DXSplashScreen.Show<SplashScreenLoading>();
+
                     DateTime dDated = new DateTime();
                     dDated = Convert.ToDateTime(dt.Rows[0].ItemArray[3].ToString());
 
                     txtPreparedFor.Text = dt.Rows[0].ItemArray[1].ToString();
                     txtYourAdviser.Text = dt.Rows[0].ItemArray[2].ToString();
                     dataPicket1.EditValue = dDated;
+
+                    if (DXSplashScreen.IsActive)
+                        DXSplashScreen.Close();
                 }
             }
         }
@@ -171,7 +166,7 @@ namespace DXApplication2
             string fileName = dt.Rows[0].ItemArray[1].ToString() + "_" + DataAccess._CoverPageID.ToString();
 
             string filePathName = @"C:\tic\Documents\" + fileName + ".docx";
-            string templatePath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase).Replace("file:\\", "") + @"\Documents\temp.docx";
+            string templatePath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase).Replace("file:\\", "") + @"\temp.docx";
 
             //using (var document = DocX.Create(filePathName))
             //{
@@ -1805,24 +1800,10 @@ namespace DXApplication2
         private async void SavePDF(Stream outputStream, string fileName)
         {
             StorageFile stFile;
-            //if (!(Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons")))
-            //{
-            //    FileSavePicker savePicker = new FileSavePicker();
-            //    savePicker.SuggestedStartLocation = PickerLocationId.DocumentsLibrary;
-            //    savePicker.DefaultFileExtension = ".pdf";
-            //    savePicker.SuggestedFileName = fileName;
-            //    savePicker.FileTypeChoices.Add("Adobe PDF Document", new List<string>() { ".pdf" });
 
-            //    ((IInitializeWithWindow)(object)savePicker).Initialize(System.Diagnostics.Process.GetCurrentProcess().MainWindowHandle);
-
-            //    stFile = await savePicker.PickSaveFileAsync();
-            //}
-            //else
-            //{
             string folderPath = @"C:\tic\Documents";
             StorageFolder local = await StorageFolder.GetFolderFromPathAsync(folderPath);
             stFile = await local.CreateFileAsync(fileName + ".pdf", CreationCollisionOption.ReplaceExisting);
-            //}
 
             if (stFile != null)
             {
@@ -1833,22 +1814,9 @@ namespace DXApplication2
                 st.Flush();
                 st.Dispose();
                 fileStream.Dispose();
-                //MessageDialog msgDialog = new MessageDialog("Do you want to view the Document?", "File created.");
-                //UICommand yesCmd = new UICommand("Yes");
-                //msgDialog.Commands.Add(yesCmd);
-                //UICommand noCmd = new UICommand("No");
-                //msgDialog.Commands.Add(noCmd);
-                //IUICommand cmd = await msgDialog.ShowAsync();
-                //if (cmd == yesCmd)
-                //{
-                //    // Launch the retrieved file
-                //    bool success = await Windows.System.Launcher.LaunchFileAsync(stFile);
-                //}
 
                 DataAccess._PageViewerFilePath = folderPath + @"\" + fileName + ".pdf";
-
             }
         }
-
     }
 }
