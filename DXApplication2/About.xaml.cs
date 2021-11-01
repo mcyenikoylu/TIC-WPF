@@ -22,7 +22,6 @@ namespace DXApplication2
         {
             InitializeComponent();
             //DataContext = grid_data;
-            grdDatabase.ItemsSource = CreateList();
             //databasepath.Text = "Database Path: " + Path.Combine(ApplicationData.Current.LocalFolder.Path, "ticdb.db");
         }
 
@@ -1595,5 +1594,12 @@ namespace DXApplication2
 
         }
 
+        private void UserControl_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+            grdDatabase.ItemsSource = CreateList();
+            grdDatabase2.ItemsSource = CreateList_SelectionAPersonalDetails();
+            grdDatabase3.ItemsSource = CreateList_SelectionBFinancialSummary();
+            databasepath.Text = "Database Path: " + Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase).Replace("file:\\", "").ToString() + "\\ticdb.db";
+        }
     }
 }

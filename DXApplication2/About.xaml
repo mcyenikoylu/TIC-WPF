@@ -5,11 +5,11 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:Custom="http://schemas.devexpress.com/winfx/2008/xaml/grid"
              mc:Ignorable="d" 
-            >
+        Loaded="UserControl_Loaded"    >
     <Grid>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0.7*"></ColumnDefinition>
+                <ColumnDefinition Width="0.5*"></ColumnDefinition>
                 <ColumnDefinition Width="2*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             
@@ -47,23 +47,31 @@
 
                     </Border>
 
-                <Custom:GridControl x:Name="grdDatabase" Grid.Row="1" >
-                    <Custom:GridColumn FieldName="ID"></Custom:GridColumn>
+                <Custom:GridControl x:Name="grdDatabase" Grid.Row="1" AutoGenerateColumns="AddNew"  >
+                    <Custom:GridControl.View>
+                        <Custom:TableView ShowGroupPanel="False" AllowEditing="False"></Custom:TableView>
+                    </Custom:GridControl.View>
                 </Custom:GridControl>
 
                 <Border Grid.Row="2" BorderThickness="1 1 1 1" Background="Gray" Padding="6" VerticalAlignment="Top">
                         <TextBlock Padding="3" Foreground="White" FontSize="16">Selection A - Personal Details</TextBlock>
                     </Border>
 
-                <Custom:GridControl x:Name="grdDatabase2" Grid.Row="3" ItemsSource="{Binding Data2}"
-                                    AutoGenerateColumns="None" VerticalAlignment="Top" SelectionMode="Row" />
+                <Custom:GridControl x:Name="grdDatabase2" Grid.Row="3" AutoGenerateColumns="AddNew" >
+                    <Custom:GridControl.View>
+                        <Custom:TableView ShowGroupPanel="False" AllowEditing="False"></Custom:TableView>
+                    </Custom:GridControl.View>
+                </Custom:GridControl>
 
                 <Border Grid.Row="4" BorderThickness="1 1 1 1" Background="Gray" Padding="6" VerticalAlignment="Top">
                         <TextBlock Padding="3" Foreground="White" FontSize="16">Selection B - Financial Summary</TextBlock>
                     </Border>
 
-                <Custom:GridControl x:Name="grdDatabase3" Grid.Row="5" ItemsSource="{Binding Data3}"
-                                    AutoGenerateColumns="None" VerticalAlignment="Top" SelectionMode="Row" />
+                <Custom:GridControl x:Name="grdDatabase3" Grid.Row="5" AutoGenerateColumns="AddNew" >
+                    <Custom:GridControl.View>
+                        <Custom:TableView ShowGroupPanel="False" AllowEditing="False"></Custom:TableView>
+                    </Custom:GridControl.View>
+                </Custom:GridControl>
 
             </Grid>
             
