@@ -5,10 +5,13 @@ using Syncfusion.DocIORenderer;
 using Syncfusion.Pdf;
 using System;
 using System.Data;
+using System.Drawing;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Ink;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using Windows.Storage;
@@ -26,7 +29,7 @@ namespace DXApplication2
             InitializeComponent();
         }
 
-        private async void BtnSave_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void BtnSave_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             try
             {
@@ -38,39 +41,38 @@ namespace DXApplication2
                 string fileNotesFolderPath = @"C:\tic\FileNotes";
                 DataAccess.AddDataCoverPage(txtPreparedFor.Text, txtYourAdviser.Text, dt, "", fileNotesFolderPath);
 
-                StorageFolder storageFolder = await StorageFolder.GetFolderFromPathAsync(fileNotesFolderPath);
-
-                string fileName = "FileNotesCoverPage_" + DataAccess._CoverPageID;
-                var file = await storageFolder.CreateFileAsync(fileName + ".jpg", CreationCollisionOption.ReplaceExisting);
-
-                MemoryStream ms = new MemoryStream();
-                FileStream fs = new FileStream(fileNotesFolderPath + "//" + fileName + ".jpg", FileMode.Create);
-
-                RenderTargetBitmap rtb = new RenderTargetBitmap((int)myInkCanvas.ActualWidth, (int)myInkCanvas.ActualHeight, 96d, 96d, PixelFormats.Default);
-                rtb.Render(myInkCanvas);
-                JpegBitmapEncoder encoder = new JpegBitmapEncoder();
-                encoder.Frames.Add(BitmapFrame.Create(rtb));
-
-                encoder.Save(fs);
-                fs.Close();
-
-                //var dialog = new MessageDialog("Cover Page data saved successfully.", "Successful");
-                //await dialog.ShowAsync();
-
+                fileNoteSave(fileNotesFolderPath);
+            }
+            catch (Exception ex)
+            {
+                if (DXSplashScreen.IsActive)
+                    DXSplashScreen.Close();
+            }
+            finally
+            {
                 if (DXSplashScreen.IsActive)
                     DXSplashScreen.Close();
 
                 MessageBoxResult result = DXMessageBox.Show("Cover Page data saved successfully.", "Successful", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
 
-            }
-            catch (Exception ex)
-            {
+        private async void fileNoteSave(string fileNotesFolderPath)
+        {
+            StorageFolder storageFolder = await StorageFolder.GetFolderFromPathAsync(fileNotesFolderPath);
 
-            }
-            finally
-            {
-                //LoadingIndicator.IsActive = false;
-            }
+            string fileName = "FileNotesCoverPage_" + DataAccess._CoverPageID;
+            var file = await storageFolder.CreateFileAsync(fileName + ".jpg", CreationCollisionOption.ReplaceExisting);
+
+            FileStream fs = new FileStream(fileNotesFolderPath + "//" + fileName + ".jpg", FileMode.Create);
+
+            RenderTargetBitmap rtb = new RenderTargetBitmap((int)myInkCanvas.ActualWidth, (int)myInkCanvas.ActualHeight, 96d, 96d, PixelFormats.Default);
+            rtb.Render(myInkCanvas);
+            JpegBitmapEncoder encoder = new JpegBitmapEncoder();
+            encoder.Frames.Add(BitmapFrame.Create(rtb));
+
+            encoder.Save(fs);
+            fs.Close();
         }
 
         private void BtnNew_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -153,6 +155,37 @@ namespace DXApplication2
                     txtYourAdviser.Text = dt.Rows[0].ItemArray[2].ToString();
                     dataPicket1.EditValue = dDated;
 
+                    ////////BitmapImage bitImg = new BitmapImage(new Uri("", UriKind.Absolute));
+                    ////FileStream fs = null;
+                    ////fs = new FileStream(dt.Rows[0].ItemArray[5].ToString()+"\\"+dt.Rows[0].ItemArray[4].ToString(), FileMode.Open, FileAccess.Read);
+                    ////StrokeCollection strokes = new StrokeCollection(fs);
+                    ////myInkCanvas.Strokes = strokes;
+
+                    ////Bitmap bitmap = new Bitmap(dt.Rows[0].ItemArray[5].ToString() + "\\" + dt.Rows[0].ItemArray[4].ToString());
+                    ////BitmapImage bitImg = new BitmapImage(new Uri(dt.Rows[0].ItemArray[5].ToString() + "\\" + dt.Rows[0].ItemArray[4].ToString(), UriKind.Absolute));
+
+                    ////myInkCanvas.
+                    //string file = dt.Rows[0].ItemArray[5].ToString() + "\\" + dt.Rows[0].ItemArray[4].ToString();
+                    //Canvas canvas = new Canvas { Width = myInkCanvas.ActualWidth, Height = myInkCanvas.ActualHeight };
+                    //System.Windows.Controls.Image image = new System.Windows.Controls.Image
+                    //{
+                    //    Width = myInkCanvas.ActualWidth,
+                    //    Height = myInkCanvas.ActualHeight,
+                    //    Source = new BitmapImage(new Uri(file, UriKind.Relative))
+
+                    //};
+                    //myInkCanvas.Children.Add(canvas);
+                    //canvas.Children.Add(image);
+                    //Canvas.SetTop(image, 50);
+                    //Canvas.SetLeft(image, 50);
+
+                    ////using (FileStream filex = new FileStream(file,
+                    ////                            FileMode.Create, FileAccess.Write))
+                    ////{
+                    ////    myInkCanvas.Strokes.Save(filex);
+                    ////    filex.Close();
+                    ////}
+                    
                     if (DXSplashScreen.IsActive)
                         DXSplashScreen.Close();
                 }

@@ -29,8 +29,9 @@ namespace DXApplication2
         {
             try
             {
-                //string dbpath = Path.Combine(ApplicationData.Current.LocalFolder.Path, dbname);
-                using (SqliteConnection db = new SqliteConnection($"Filename={dbname}"))
+                string dbPath = Path.Combine(Environment.CurrentDirectory, "ticdb.db");
+                string connString = string.Format("Data Source={0}", dbPath);
+                using (SqliteConnection db = new SqliteConnection(connString))
                 {
                     db.Open();
 
@@ -45,15 +46,40 @@ namespace DXApplication2
                     insertCommand.Parameters.AddWithValue("@FileNotes_FileName", fileNotes_FileName);
                     insertCommand.Parameters.AddWithValue("@FileNotes_FilePath", fileNotes_FilePath);
 
-                    SqliteCommand cmd_id = new SqliteCommand();
-                    cmd_id.Connection = db;
-                    cmd_id.CommandText = "select last_insert_rowid() as ID from CoverPage";
+                    //SqliteCommand cmd_id = new SqliteCommand();
+                    //cmd_id.Connection = db;
+                    //cmd_id.CommandText = "select count(1) from CoverPage";
 
                     insertCommand.ExecuteReader();
 
-                    //_CoverPageID = -1;
-                    object __CoverPageID = cmd_id.ExecuteScalar();
-                    _CoverPageID = int.Parse(__CoverPageID.ToString());
+                    //object __CoverPageID = cmd_id.ExecuteScalar();
+
+                    //string dbPath = Path.Combine(Environment.CurrentDirectory, "ticdb.db");
+                    //string connString = string.Format("Data Source={0}", dbPath);
+                    //SqliteConnection connstr = new SqliteConnection(connString);
+                    //connstr.Open();
+                    SqliteCommand cmd = new SqliteCommand();
+                    cmd.Connection = db;
+                    cmd.CommandText = "select COUNT(*) from [CoverPage]";
+                    SqliteDataReader rdr = cmd.ExecuteReader();
+                    DataTable dt = new DataTable();
+                    dt.Load(rdr);
+                    rdr.Close();
+                    //connstr.Close();
+                    int id = Convert.ToInt32(dt.Rows[0].ItemArray[0]);
+
+                    if(id == 0)
+                    {
+                        using (var contents = db.CreateCommand())
+                        {
+                            contents.CommandText = "SELECT COUNT(*) FROM [CoverPage]";
+                            var i = contents.ExecuteScalar();
+                            id = Convert.ToInt32(i);
+                        }
+                    }
+                    
+
+                    _CoverPageID = int.Parse(id.ToString());
                     fileNotes_FileName = "FileNotesCoverPage_" + _CoverPageID.ToString() + ".jpg";
 
                     SqliteCommand insertCommand2 = new SqliteCommand();
@@ -237,9 +263,10 @@ namespace DXApplication2
          string FileNotes_FilePath
             )
         {
-            
+            string dbPath = Path.Combine(Environment.CurrentDirectory, "ticdb.db");
+            string connString = string.Format("Data Source={0}", dbPath);
             using (SqliteConnection db =
-              new SqliteConnection($"Filename={dbname}"))
+              new SqliteConnection(connString))
             {
                 db.Open();
 
@@ -1014,9 +1041,10 @@ namespace DXApplication2
          string FileNotes_FilePath
             )
         {
-            
+            string dbPath = Path.Combine(Environment.CurrentDirectory, "ticdb.db");
+            string connString = string.Format("Data Source={0}", dbPath);
             using (SqliteConnection db =
-              new SqliteConnection($"Filename={dbname}"))
+              new SqliteConnection(connString))
             {
                 db.Open();
 
@@ -1876,7 +1904,9 @@ namespace DXApplication2
 
         public static DataTable getCoverPageData(int coverPageID)
         {
-            SqliteConnection connstr = new SqliteConnection($"Filename={dbname}");
+            string dbPath = Path.Combine(Environment.CurrentDirectory, "ticdb.db");
+            string connString = string.Format("Data Source={0}", dbPath);
+            SqliteConnection connstr = new SqliteConnection(connString);
             connstr.Open();
             SqliteCommand cmd = new SqliteCommand();
             cmd.Connection = connstr;
@@ -1892,7 +1922,9 @@ namespace DXApplication2
 
         public static DataTable getSelectionAPersonalDetails(int coverPageID)
         {
-            SqliteConnection connstr = new SqliteConnection($"Filename={dbname}");
+            string dbPath = Path.Combine(Environment.CurrentDirectory, "ticdb.db");
+            string connString = string.Format("Data Source={0}", dbPath);
+            SqliteConnection connstr = new SqliteConnection(connString);
             connstr.Open();
             SqliteCommand cmd = new SqliteCommand();
             cmd.Connection = connstr;
@@ -1908,7 +1940,9 @@ namespace DXApplication2
 
         public static DataTable getSelectionBFinancialSummary(int coverPageID)
         {
-            SqliteConnection connstr = new SqliteConnection($"Filename={dbname}");
+            string dbPath = Path.Combine(Environment.CurrentDirectory, "ticdb.db");
+            string connString = string.Format("Data Source={0}", dbPath);
+            SqliteConnection connstr = new SqliteConnection(connString);
             connstr.Open();
             SqliteCommand cmd = new SqliteCommand();
             cmd.Connection = connstr;

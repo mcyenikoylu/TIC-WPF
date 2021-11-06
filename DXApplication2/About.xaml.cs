@@ -28,8 +28,9 @@ namespace DXApplication2
         public static IList CreateList()
         {
             List<TestData> list = new List<TestData>();
-
-            SqliteConnection connstr = new SqliteConnection($"Filename={DataAccess.dbname}");
+            string dbPath = Path.Combine(Environment.CurrentDirectory, "ticdb.db");
+            string connString = string.Format("Data Source={0}", dbPath);
+            SqliteConnection connstr = new SqliteConnection(connString);
             connstr.Open();
             SqliteCommand cmd = new SqliteCommand();
             cmd.Connection = connstr;
@@ -92,8 +93,9 @@ namespace DXApplication2
         public static IList CreateList_SelectionAPersonalDetails()
         {
             List<SelectionAPersonalDetails> list = new List<SelectionAPersonalDetails>();
-
-            SqliteConnection connstr = new SqliteConnection($"Filename={DataAccess.dbname}");
+            string dbPath = Path.Combine(Environment.CurrentDirectory, "ticdb.db");
+            string connString = string.Format("Data Source={0}", dbPath);
+            SqliteConnection connstr = new SqliteConnection(connString);
             connstr.Open();
             SqliteCommand cmd = new SqliteCommand();
             cmd.Connection = connstr;
@@ -922,8 +924,9 @@ namespace DXApplication2
         public static IList CreateList_SelectionBFinancialSummary()
         {
             List<SelectionBFinancialSummary> list = new List<SelectionBFinancialSummary>();
-
-            SqliteConnection connstr = new SqliteConnection($"Filename={DataAccess.dbname}");
+            string dbPath = Path.Combine(Environment.CurrentDirectory, "ticdb.db");
+            string connString = string.Format("Data Source={0}", dbPath);
+            SqliteConnection connstr = new SqliteConnection(connString);
             connstr.Open();
             SqliteCommand cmd = new SqliteCommand();
             cmd.Connection = connstr;
@@ -1578,8 +1581,9 @@ namespace DXApplication2
                 grdDatabase.ItemsSource = CreateList();
                 grdDatabase2.ItemsSource = CreateList_SelectionAPersonalDetails();
                 grdDatabase3.ItemsSource = CreateList_SelectionBFinancialSummary();
-                databasepath.Text = "Database Path: " + Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase).Replace("file:\\", "").ToString() + "\\ticdb.db";
-
+                //databasepath.Text = "Database Path: " + Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase).Replace("file:\\", "").ToString() + "\\ticdb.db";
+                string dbPath = Path.Combine(Environment.CurrentDirectory, "ticdb.db");
+                databasepath.Text = "Database Path: " + dbPath;
             }
             catch (Exception ex)
             {
@@ -1597,7 +1601,8 @@ namespace DXApplication2
 
         private void BtnOpen_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            string path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase).Replace("file:\\", "").ToString();
+            //string path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase).Replace("file:\\", "").ToString();
+            string path = Environment.CurrentDirectory.ToString();
             Process.Start(path);
         }
     }
