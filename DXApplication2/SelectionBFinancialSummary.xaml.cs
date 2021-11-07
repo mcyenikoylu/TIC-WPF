@@ -380,7 +380,7 @@ namespace DXApplication2
 
                 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 if (DXSplashScreen.IsActive)
                     DXSplashScreen.Close();
@@ -788,7 +788,7 @@ namespace DXApplication2
    
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 if (DXSplashScreen.IsActive)
                     DXSplashScreen.Close();

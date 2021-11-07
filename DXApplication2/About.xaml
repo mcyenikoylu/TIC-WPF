@@ -4,8 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:Custom="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
              mc:Ignorable="d" 
-        Loaded="UserControl_Loaded"    >
+        Loaded="UserControl_Loaded" >
     <Grid>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -20,11 +21,11 @@
                         <RowDefinition MinHeight="20" Height="Auto"></RowDefinition>
                         <RowDefinition MinHeight="20" Height="Auto"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <TextBlock x:Name="databasetype" Grid.Row="0" Text="Database Type: SQLite3" Margin="10" TextWrapping="Wrap" />
+                    <TextBlock x:Name="databasetype" Grid.Row="0" Text="Database Type: MSSQLLocalDB" Margin="10" TextWrapping="Wrap" />
                     <TextBlock x:Name="databasepath" Grid.Row="1" Text="Database Path:" Margin="10" TextWrapping="Wrap" />
                 </Grid>
                 <Grid>
-                            <Button x:Name="btnOpen" Click="BtnOpen_Click" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Background="Blue" Foreground="White" Content="Open Folder"  />
+                            <Button x:Name="btnOpen" Click="BtnOpen_Click" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Foreground="White" Content="Open Folder" Height="30" />
                         </Grid>
                     </Grid>
                 

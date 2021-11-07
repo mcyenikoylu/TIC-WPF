@@ -2,10 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using Windows.Storage;
 
 namespace DXApplication2
@@ -16,8 +18,8 @@ namespace DXApplication2
         public static string dbname = "ticdb.db";
         public static string _PageViewerFilePath = "";
 
-        public static string path = ""; 
-        public static string dbpath = ""; 
+        public static string path = "";
+        public static string dbpath = "";
 
         public static void AddDataCoverPage(
             string preparedFor,
@@ -30,7 +32,7 @@ namespace DXApplication2
             try
             {
                 string dbPath = Path.Combine(Environment.CurrentDirectory, "ticdb.db");
-                string connString = string.Format("Data Source={0}", dbPath);
+                string connString = string.Format("Data Source={0}", "C:/tic/ticdb.db");
                 using (SqliteConnection db = new SqliteConnection(connString))
                 {
                     db.Open();
@@ -68,7 +70,7 @@ namespace DXApplication2
                     //connstr.Close();
                     int id = Convert.ToInt32(dt.Rows[0].ItemArray[0]);
 
-                    if(id == 0)
+                    if (id == 0)
                     {
                         using (var contents = db.CreateCommand())
                         {
@@ -77,7 +79,7 @@ namespace DXApplication2
                             id = Convert.ToInt32(i);
                         }
                     }
-                    
+
 
                     _CoverPageID = int.Parse(id.ToString());
                     fileNotes_FileName = "FileNotesCoverPage_" + _CoverPageID.ToString() + ".jpg";
@@ -92,9 +94,9 @@ namespace DXApplication2
                     db.Close();
                 }
             }
-            catch (Exception ex)
+            catch (Exception error)
             {
-
+                MessageBox.Show(error.Message, "Database Error");
             }
         }
 
@@ -1955,6 +1957,222 @@ namespace DXApplication2
 
             return dt;
         }
+
+        public static bool ConnDBLocal(bool Connection)
+        {
+            try
+            {
+                if (Connection)
+                {
+                    string conn = "data source=" + LocalDataSource + ";AttachDbFilename=" + LocalAttachDbFilename + ";Initial Catalog=" + LocalDatabase + ";Integrated Security=True;";
+                    dbLocal.ConnectionString = conn;
+                    dbLocal.Open();
+                    return true;
+                }
+                else
+                {
+                    dbLocal.Close();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ConnDBLocal Exception");
+                return false;
+            }
+        }
+        public static string LocalDataSource = "(LocalDb)\\MSSQLLocalDB";
+        public static string LocalDatabase = "TICDB";
+        public static string LocalAttachDbFilename = "|DataDirectory|\\TICDB.mdf";
+        public static SqlConnection dbLocal = new SqlConnection();
+
+        public static void AddDataCoverPageLocalDB(
+            string preparedFor,
+            string yourAdviser,
+            DateTime dateValue,
+         //File Notes
+         string fileNotes_FileName,
+         string fileNotes_FilePath)
+        {
+            try
+            {
+                if (ConnDBLocal(true))
+                {
+                    SqlCommand insertCommand = new SqlCommand();
+                    insertCommand.Connection = dbLocal;
+
+                    // Use parameterized query to prevent SQL injection attacks
+                    insertCommand.CommandText = "INSERT INTO CoverPage (PreparedFor,YourAdviser,DateValue,FileNotes_FileName,FileNotes_FilePath) VALUES (@PreparedFor, @YourAdviser, @DateValue, @FileNotes_FileName, @FileNotes_FilePath);";
+                    insertCommand.Parameters.AddWithValue("@PreparedFor", preparedFor);
+                    insertCommand.Parameters.AddWithValue("@YourAdviser", yourAdviser);
+                    insertCommand.Parameters.AddWithValue("@DateValue", dateValue);
+                    insertCommand.Parameters.AddWithValue("@FileNotes_FileName", fileNotes_FileName);
+                    insertCommand.Parameters.AddWithValue("@FileNotes_FilePath", fileNotes_FilePath);
+                    insertCommand.ExecuteNonQuery();
+
+                    ConnDBLocal(false);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "AddDataCoverPageLocalDB Exception");
+            }
+        }
+
+        /// <summary>
+        /// Sql tipinde string DateTime dönüştürme için kullanılır.Parametre olarak değerleri DateTime şeklinde alır.
+        /// </summary>
+        public static string ParseDateTimeToSQLString(DateTime TarihSaat)
+        {
+            //1987-11-01 19:58:36.080
+            try
+            {
+                string Gun = TarihSaat.Day.ToString("00");
+                string Ay = TarihSaat.Month.ToString("00");
+                string Yil = TarihSaat.Year.ToString("0000");
+                string Saat = TarihSaat.Hour.ToString("00");
+                string Dakika = TarihSaat.Minute.ToString("00");
+                string Saniye = TarihSaat.Second.ToString("00");
+                string Salise = TarihSaat.Millisecond.ToString("000");
+
+                if (Saat.Length < 3)
+                    Saat = C.ParseInt(Saat).ToString("00");
+                else
+                    Saat = "00";
+
+                if (Dakika.Length < 3)
+                    Dakika = C.ParseInt(Dakika).ToString("00");
+                else
+                    Dakika = "00";
+
+                if (Saniye.Length < 3)
+                    Saniye = C.ParseInt(Saniye).ToString("00");
+                else
+                    Saniye = "00";
+
+                if (Salise.Length < 4)
+                    Salise = C.ParseInt(Salise).ToString("000");
+                else
+                    Salise = "000";
+
+
+
+
+                return "'" + C.ParseInt(Yil).ToString("0000") + "-" + C.ParseInt(Ay).ToString("00") + "-" + C.ParseInt(Gun).ToString("00") + " " + Saat + ":" + Dakika + ":" + Saniye + "." + Salise + "'";
+
+
+            }
+            catch { }
+            return "";
+        }
+
+        /// <summary>
+        /// Sql tipinde string DateTime dönüştürme için kullanılır.Parametre olarak değerleri ayrı ayrı string şeklinde alır.
+        /// </summary>
+        public static string ParseDateTimeToSQLString(string Gun, string Ay, string Yil, string Saat = "", string Dakika = "", string Saniye = "", string Salise = "")
+        {
+            //1987-11-01 19:58:36.080
+            try
+            {
+                if (Saat.Length < 3)
+                    Saat = C.ParseInt(Saat).ToString("00");
+                else
+                    Saat = "00";
+
+                if (Dakika.Length < 3)
+                    Dakika = C.ParseInt(Dakika).ToString("00");
+                else
+                    Dakika = "00";
+
+                if (Saniye.Length < 3)
+                    Saniye = C.ParseInt(Saniye).ToString("00");
+                else
+                    Saniye = "00";
+
+                if (Salise.Length < 4)
+                    Salise = C.ParseInt(Salise).ToString("000");
+                else
+                    Salise = "000";
+
+
+                return "'" + C.ParseInt(Yil).ToString("0000") + "-" + C.ParseInt(Ay).ToString("00") + "-" + C.ParseInt(Gun).ToString("00") + " " + Saat + ":" + Dakika + ":" + Saniye + "." + Salise + "'";
+
+            }
+            catch { }
+            return "";
+        }
+
+        /// <summary>
+        /// DateTime? dönüştürme için kullanılır.
+        /// </summary>
+        public static DateTime? ParseDateTimeOrNull(object o)
+        {
+            DateTime? dtm = new DateTime?();
+            try
+            {
+                dtm = Convert.ToDateTime(o);
+                if (dtm.Value.Year < 2000)
+                    dtm = null;
+            }
+            catch
+            {
+
+            }
+            return dtm;
+        }
+
+        /// <summary>
+        /// DateTime dönüştürme için kullanılır. 
+        /// </summary>
+        public static object ParseDateTimeOrDBNULL(object o)
+        {
+
+            try
+            {
+                if (o == null)
+                    return DBNull.Value;
+                return Convert.ToDateTime(o);
+            }
+            catch { }
+            return DBNull.Value;
+        }
+
+        /// <summary>
+        /// DateTime dönüştürme için kullanılır. 
+        /// </summary>
+        public static DateTime ParseDateTime(object o)
+        {
+            DateTime dtm = new DateTime(1900, 1, 1);
+            try
+            {
+                if (o == null)
+                    return dtm;
+                dtm = Convert.ToDateTime(o);
+            }
+            catch { }
+            return dtm;
+        }
+
+        public static class C
+        {
+            /// <summary>
+            /// Integer dönüştürme için kullanılır.
+            /// </summary>
+            public static int ParseInt(object o)
+            {
+                int i = 0;
+
+
+                try
+                {
+                    i = Convert.ToInt32(o);
+                }
+                catch { }
+                return i;
+            }
+        }
+
+
 
     }
 }

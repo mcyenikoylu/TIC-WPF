@@ -22,7 +22,7 @@
     </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -78,6 +78,17 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="DevExpress.Xpf.PdfViewer.v18.2, Version=18.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2016Black.v18.2, Version=18.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2016BlackSE.v18.2, Version=18.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DevExpress 18.2\Components\Bin\Framework\DevExpress.Xpf.Themes.Office2016BlackSE.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Office2016Colorful.v18.2, Version=18.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2016White.v18.2, Version=18.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2016WhiteSE.v18.2, Version=18.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DevExpress 18.2\Components\Bin\Framework\DevExpress.Xpf.Themes.Office2016WhiteSE.v18.2.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -104,6 +115,9 @@
     <Compile Include="DXSplashScreen\SplashScreenLoading.xaml.cs">
       <DependentUpon>SplashScreenLoading.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DXSplashScreen\SplashScreenStart.xaml.cs">
+      <DependentUpon>SplashScreenStart.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
@@ -123,6 +137,10 @@
       <DependentUpon>PageViewer.xaml</DependentUpon>
     </Compile>
     <Page Include="DXSplashScreen\SplashScreenLoading.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DXSplashScreen\SplashScreenStart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -177,6 +195,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="DXSplashScreen\TICLogo.png" />
     <Content Include="ticdb.db">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -228,10 +247,10 @@
       <Version>6.1.2</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.DocIORenderer.Net.Core">
-      <Version>19.3.0.47</Version>
+      <Version>19.3.0.48</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Licensing">
-      <Version>19.3.0.47</Version>
+      <Version>19.3.0.48</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

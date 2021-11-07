@@ -4,8 +4,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Diagnostics;
 using System.IO;
+using System.Windows;
 using System.Windows.Controls;
 using Windows.Storage;
 using Windows.UI.Xaml;
@@ -29,7 +31,7 @@ namespace DXApplication2
         {
             List<TestData> list = new List<TestData>();
             string dbPath = Path.Combine(Environment.CurrentDirectory, "ticdb.db");
-            string connString = string.Format("Data Source={0}", dbPath);
+            string connString = string.Format("Data Source={0};", "C:/tic/ticdb.db");
             SqliteConnection connstr = new SqliteConnection(connString);
             connstr.Open();
             SqliteCommand cmd = new SqliteCommand();
@@ -71,6 +73,43 @@ namespace DXApplication2
             //        Text2 = "ROW " + i
             //    });
             //}
+            return list;
+        }
+
+        public static IList CreateListLocalDB()
+        {
+            List<TestData> list = new List<TestData>();
+            if (DataAccess.ConnDBLocal(true))
+            {
+                SqlCommand insertCommand = new SqlCommand();
+                insertCommand.Connection = DataAccess.dbLocal;
+                insertCommand.CommandText = "select ID,PreparedFor,YourAdviser,DateValue,FileNotes_FileName,FileNotes_FilePath from CoverPage";
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = insertCommand;
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                DataAccess.ConnDBLocal(false);
+
+                foreach (DataRow item in dt.Rows)
+                {
+                    int id = Convert.ToInt32(item.ItemArray[0]);
+                    string preparedFor = item.ItemArray[1].ToString();
+                    string yourAdviser = item.ItemArray[2].ToString();
+                    DateTime dateValue = Convert.ToDateTime(item.ItemArray[3]);
+                    string fileNotes_FileName = item.ItemArray[4].ToString();
+                    string fileNotes_FilePath = item.ItemArray[5].ToString();
+                    list.Add(new TestData()
+                    {
+                        ID = id,
+                        PreparedFor = preparedFor,
+                        YourAdviser = yourAdviser,
+                        DateValue = dateValue,
+                        FileNotes_FileName = fileNotes_FileName,
+                        FileNotes_FilePath = fileNotes_FilePath
+                    });
+
+                }
+            }
             return list;
         }
 
@@ -1578,9 +1617,9 @@ namespace DXApplication2
             {
                 DXSplashScreen.Show<SplashScreenLoading>();
 
-                grdDatabase.ItemsSource = CreateList();
-                grdDatabase2.ItemsSource = CreateList_SelectionAPersonalDetails();
-                grdDatabase3.ItemsSource = CreateList_SelectionBFinancialSummary();
+                grdDatabase.ItemsSource = CreateListLocalDB();
+                //grdDatabase2.ItemsSource = CreateList_SelectionAPersonalDetails();
+                //grdDatabase3.ItemsSource = CreateList_SelectionBFinancialSummary();
                 //databasepath.Text = "Database Path: " + Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase).Replace("file:\\", "").ToString() + "\\ticdb.db";
                 string dbPath = Path.Combine(Environment.CurrentDirectory, "ticdb.db");
                 databasepath.Text = "Database Path: " + dbPath;
@@ -1589,14 +1628,14 @@ namespace DXApplication2
             {
                 if (DXSplashScreen.IsActive)
                     DXSplashScreen.Close();
+
+                MessageBox.Show(ex.Message, "UserControl_Loaded Exception");
             }
             finally
             {
                 if (DXSplashScreen.IsActive)
                     DXSplashScreen.Close();
             }
-            
-            
         }
 
         private void BtnOpen_Click(object sender, System.Windows.RoutedEventArgs e)

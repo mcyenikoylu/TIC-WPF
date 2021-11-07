@@ -3,8 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="300">
+             d:DesignHeight="600" d:DesignWidth="300" >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="150"></RowDefinition>
@@ -25,7 +26,7 @@
             </Grid.ColumnDefinitions>
            
                 <Grid Grid.Column="0" VerticalAlignment="Bottom">
-                    <TextBlock Text="Version 1.0.2.6" Margin="20 0 0 10"></TextBlock>
+                    <TextBlock x:Name="tbVersion" Text="Version 1.0.2.6" Margin="20 0 0 10"></TextBlock>
                 </Grid>
                 <Grid Grid.Column="1" VerticalAlignment="Bottom">
                     <Image Source="Images/1-2.png" Width="100" Height="100" Stretch="Fill" VerticalAlignment="Top" HorizontalAlignment="Right" />

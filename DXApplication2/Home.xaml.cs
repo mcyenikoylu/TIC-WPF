@@ -37,9 +37,11 @@ namespace DXApplication2
                 DXSplashScreen.Show<SplashScreenLoading>();
 
                 DateTime dt = Convert.ToDateTime(dataPicket1.EditValue);
-
+                //DataAccess.ParseDateTimeOrDBNULL(dataPicket1.EditValue)
                 string fileNotesFolderPath = @"C:\tic\FileNotes";
-                DataAccess.AddDataCoverPage(txtPreparedFor.Text, txtYourAdviser.Text, dt, "", fileNotesFolderPath);
+                //DataAccess.AddDataCoverPage(txtPreparedFor.Text, txtYourAdviser.Text, dt, "", fileNotesFolderPath);
+                DataAccess.AddDataCoverPageLocalDB(txtPreparedFor.Text, txtYourAdviser.Text, 
+                    dt, "", fileNotesFolderPath);
 
                 fileNoteSave(fileNotesFolderPath);
             }
@@ -47,6 +49,8 @@ namespace DXApplication2
             {
                 if (DXSplashScreen.IsActive)
                     DXSplashScreen.Close();
+
+                MessageBox.Show(ex.Message, "BtnSave_Click Exception");
             }
             finally
             {
@@ -120,7 +124,7 @@ namespace DXApplication2
                 DXSplashScreen.Show<SplashScreenLoading>();
                 LongOperationAsync();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 if (DXSplashScreen.IsActive)
                     DXSplashScreen.Close();

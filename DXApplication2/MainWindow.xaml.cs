@@ -1,5 +1,6 @@
 ﻿using DevExpress.Xpf.Core;
 using System.IO;
+using System.Windows;
 
 namespace DXApplication2
 {
@@ -11,8 +12,16 @@ namespace DXApplication2
         public MainWindow()
         {
             InitializeComponent();
+            this.Loaded += new RoutedEventHandler(MainWindow_Loaded);
             DataAccess.path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
             DataAccess.dbpath = DataAccess.path + "\\" + DataAccess.dbname;
+        }
+        void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            if(DXSplashScreen.IsActive)
+                DXSplashScreen.Close();
+
+            this.Activate();
         }
     }
 }
